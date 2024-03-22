@@ -1,0 +1,21 @@
+.search{
+    display: flex;
+    border: 2px solid var(--borderColor);
+    align-items: center;
+    border-radius: 28px;
+    
+}
+img{
+    height: 48px;
+    width: 48px;
+}
+input{
+    font-size: 16px;
+    color: var(--textColor);
+    outline: none;
+    border: none;
+    background: transparent;
+}
+.searchL::placeholder{
+    background: var(--borderColor);
+}

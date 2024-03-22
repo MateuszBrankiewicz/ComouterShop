@@ -72,3 +72,6 @@
     left: 0px;
 }
 
+.indicator.active{
+    background: var(--borderColor);
+}

@@ -76,16 +76,21 @@ nav ul li a {
 @media screen and (min-width:730px) {
     header{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
     }
-    h1{
+    /* h1{
         position: relative;
         display: inline;
         text-align: center;
-        width: 90%;
+        
         margin-bottom: 0;
+    } */
+    nav{
+        justify-content:space-between ;
     }
     .menu{
         flex-direction: row;
@@ -103,12 +108,14 @@ nav ul li a {
     .open-menu,.close-menu{
         display: none;
     }
-    nav ul li a p {
-        margin: 0;
-        display: none;
+   
+    img{
+        height: 48px;
+        width: 48px;
     }
     .logo{
-        width: 7%;
+        justify-self: flex-start;
+        margin-left: 10%;
     }
     .nav-bar {
         width: 100%;
@@ -120,6 +127,7 @@ nav ul li a {
         background-color: var(--color2);
         padding: 0 20px 12px 20px;
         margin: 0;
+        
     }
 
 }
