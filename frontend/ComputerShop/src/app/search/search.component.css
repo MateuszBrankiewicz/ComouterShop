@@ -3,7 +3,8 @@
     border: 2px solid var(--borderColor);
     align-items: center;
     border-radius: 28px;
-    
+  
+    background: var(--borderColor);
 }
 img{
     height: 48px;

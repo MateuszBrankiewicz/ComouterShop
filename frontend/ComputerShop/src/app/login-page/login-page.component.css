@@ -1,0 +1,30 @@
+.main{
+    color: var(--textColor);
+    border: 2px solid var(--borderColor);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+}
+#temp{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+app-button-component{
+    width: 50%;
+    max-width: 480px;
+    
+}
+app-login-input{
+    width: 50%;
+    max-width: 480px;
+}
+a{
+    text-decoration: none;
+    color: var(--borderColor);
+}

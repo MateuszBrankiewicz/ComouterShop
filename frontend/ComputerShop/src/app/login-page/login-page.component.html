@@ -1,0 +1,26 @@
+<div id="temp">
+<div class="main">
+    <h1>Logowanie</h1>
+    <app-login-input 
+    type="text" 
+    pattern="[a-zA-Z]*" 
+    placeholder="Podaj email" 
+    
+  ></app-login-input>
+  <app-login-input 
+  type="password" 
+  pattern="[a-zA-Z]*" 
+  placeholder="Podaj haslo" 
+  
+></app-login-input>
+
+<!-- <app-login-input 
+type="password" 
+pattern="[a-zA-Z]*" 
+placeholder="Powtorz haslo" 
+
+></app-login-input> -->
+<app-button-component (buttonClick)="login()" text="Login"></app-button-component>
+<p>Nie masz konta? <a href="">Zarejestruj się</a></p>
+</div>
+</div>

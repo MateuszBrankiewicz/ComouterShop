@@ -1,8 +1,8 @@
 nav{
     color: white;
-
+    border-bottom: 1px solid var(--borderColor);
 }
-ul{
+.menu{
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -13,6 +13,7 @@ ul{
     overflow: hidden;
 
 }
+
 nav ul li a{
     text-decoration: none;
     color: var(--textColor);
@@ -31,8 +32,34 @@ ul li:hover ul {
     width: 177px;
     z-index: 100;
   } 
-  @media(max-width: 610px){
-    ul {
+  .open-menu,
+  .close-menu {
+      position: absolute;
+      color: var(--textColor);
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: none;
+  }
+  .open-menu {
+      top: 20;
+      right: 20px;
+      transform: translateY(-50%);
+  }
+  .close-menu {
+    top: 20px;
+    right: 20px;
+}
+  #check{
+    display: none;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 900px) {
+    ul li:not(:last-child){
+        margin-right: 10px;
+    }
+  }
+  @media(max-width: 750px){
+    .menu {
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -45,7 +72,7 @@ ul li:hover ul {
         background-color: var(--background);
         transition: all 0.2s ease-in-out;
     }
-    ul li {margin-top: 40px;}
-    ul li a {padding: 10px;}
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
     .open-menu , .close-menu {display: block;}
     #check:checked ~ .menu {right: 0;}}
