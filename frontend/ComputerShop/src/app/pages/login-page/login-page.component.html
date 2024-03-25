@@ -5,13 +5,13 @@
     type="text" 
     pattern="[a-zA-Z]*" 
     placeholder="Podaj email" 
-    
+    [(ngModel)] = "loginPageObj.email"
   ></app-login-input>
   <app-login-input 
   type="password" 
   pattern="[a-zA-Z]*" 
   placeholder="Podaj haslo" 
-  
+  [(ngModel)] = "loginPageObj.password"
 ></app-login-input>
 
 <app-button-component (buttonClick)="login()" text="Login"></app-button-component>

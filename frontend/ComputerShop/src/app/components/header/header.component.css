@@ -10,6 +10,19 @@ ul li :last-child{
     align-items: center;
        
 }
+.account{
+    margin-left: 5%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -20px;
+}
+.account p{
+    margin-top: -10px;
+    text-align: center;
+}
+
 ul li{
     margin-left: 5%;
 }
@@ -19,8 +32,8 @@ ul li a{
     color: var(--textColor);
 }
 img{
-    height: 48px;
-    width: 48px;
+    height: 56px;
+    width: 56px;
 }
 ul:not(:first-child){
     align-self: flex-end;
@@ -43,7 +56,7 @@ ul:not(:first-child){
         grid-column-start: 1;
         grid-column-end: 4;
     }
-    #acc{
+    .account{
         grid-row: 1;
         grid-column: 2;
     }
@@ -53,7 +66,5 @@ ul:not(:first-child){
     #help{
         grid-row: 1;
     }
-    ul li{
-        
-    }
+    
 }

@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { SearchComponent } from '../search/search.component';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [SearchComponent,RouterLink],
+  imports:[SearchComponent,RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent  {
+  @Input() username: string = '';
 
 }

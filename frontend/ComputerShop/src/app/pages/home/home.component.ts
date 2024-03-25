@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SliderComponent } from '../../components/slider/slider.component';
 import { ProductNavbarComponent } from '../../components/product-navbar/product-navbar.component';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,9 @@ import { ProductNavbarComponent } from '../../components/product-navbar/product-
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit  {
+  userName : string = '';
+  user:any
   slides : any[] = [ 
   {
     url: './../assets/img/slider/2.avif',
@@ -28,4 +31,21 @@ export class HomeComponent {
     url: './../assets/img/slider/4.jpg',
     title: 'Slide 4'
   }];
+  constructor(@Inject(DOCUMENT) private document:Document){
+    const localStorage = document.defaultView?.localStorage;
+    if(localStorage){
+    const userData = localStorage.getItem('user')
+    console.log(userData)
+    if(userData !== null){
+      this.user = JSON.parse(userData);
+      console.log(this.user.name)
+      this.userName = this.user.name
+    }
+  }}
+  getFromLocalStorage(){
+    
+  }
+ ngOnInit(): void {
+     this.getFromLocalStorage();
+ }
 }

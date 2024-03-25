@@ -32,7 +32,7 @@ def register():
     print(data)
     required_fields = ['name', 'surname', 'email', 'password']
     if not all(field in data for field in required_fields):
-        return jsonify({'error': 'Brak wymaganych pól'}), 400
+        return jsonify({'message': 'Brak wymaganych pól'}), 400
     
     # Open the file in read mode first
     with open("./users/users.csv", mode='r', newline='') as file:
@@ -51,7 +51,7 @@ def register():
         writer.writerow('/n')
         writer.writerow([new_id, data['name'], data['surname'], data['email'], data['password']])
     
-    return jsonify({'message': 'Rejestracja udana'}), 200
+    return jsonify({'result': 'Rejestracja udana'}), 200
 
 @app.route('/api/login', methods = ['POST'])
 def login():
@@ -61,8 +61,9 @@ def login():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
+            print(row[3],row[4])
             if(data['email'] == row[3] and data['password'] == row[4]):
-                  return jsonify({'message': 'Rejestracja udana'}), 200
-    return jsonify({'error': 'Niepoprawne dane logowania'}), 400
+                  return jsonify({'result': 'Logowanie udane', 'name':row[1],'surname':row[2],'email':row[3],'password':row[4]}), 200
+    return jsonify({'message': 'Niepoprawne dane logowania'}), 400
 if __name__ == '__main__':
     app.run(debug=True)
