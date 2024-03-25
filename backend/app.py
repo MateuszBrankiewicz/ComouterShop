@@ -1,6 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify,request
 from flask_cors import CORS
-import requests
+import csv
 import readFileFunctions
 
 
@@ -25,5 +25,44 @@ def disk():
 def gpu():
       
     return jsonify(readFileFunctions.getGpu())
+@app.route('/api/register', methods=['POST'])
+def register():
+    data = request.json
+    
+    print(data)
+    required_fields = ['name', 'surname', 'email', 'password']
+    if not all(field in data for field in required_fields):
+        return jsonify({'error': 'Brak wymaganych pól'}), 400
+    
+    # Open the file in read mode first
+    with open("./users/users.csv", mode='r', newline='') as file:
+        reader = csv.reader(file)
+        
+        rows = list(reader)
+        if rows:
+            last_id = int(rows[-1][0])
+            new_id = last_id + 1
+        else:
+            new_id = 1
+    
+    # Then reopen the file in append mode for writing
+    with open("./users/users.csv", mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow('/n')
+        writer.writerow([new_id, data['name'], data['surname'], data['email'], data['password']])
+    
+    return jsonify({'message': 'Rejestracja udana'}), 200
+
+@app.route('/api/login', methods = ['POST'])
+def login():
+    data = request.json
+    print(data)
+    with open('./users/users.csv', 'r') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            if(data['email'] == row[3] and data['password'] == row[4]):
+                  return jsonify({'message': 'Rejestracja udana'}), 200
+    return jsonify({'error': 'Niepoprawne dane logowania'}), 400
 if __name__ == '__main__':
     app.run(debug=True)
