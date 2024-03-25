@@ -1,0 +1,40 @@
+<div class="temp">
+<div class="register-page">
+    <h1>Rejestracja</h1>
+<<app-login-input 
+type="text" 
+placeholder="Imie (wymagane)" 
+[(ngModel)]="registerPageObj.name">
+</app-login-input>
+
+<app-login-input 
+type="text" 
+placeholder="Nazwisko (wymagane)" 
+[(ngModel)]="registerPageObj.surname">
+</app-login-input>
+
+<app-login-input 
+type="email" 
+placeholder="Email (wymagane)" 
+[(ngModel)]="registerPageObj.email">
+</app-login-input>
+
+<app-login-input 
+type="password" 
+placeholder="Hasło (wymagane)" 
+[(ngModel)]="registerPageObj.password">
+</app-login-input>
+
+<app-login-input 
+type="password" 
+placeholder="Powtorz haslo" 
+[(ngModel)]="registerPageObj.repeatPassword">
+</app-login-input>
+
+<h4>Zgody formalne</h4>
+<div class="regulamin">
+<input type="checkbox" #acceptRegulamin (blur)="(checkboxGetValue(acceptRegulamin.value))" name="regulamin" id="regulamin" required> Akceptuje <a href="">regulamin</a> sklepu *
+</div>
+<app-button-component text="Załóż konto" (buttonClick)="register()"></app-button-component>
+</div>
+</div>

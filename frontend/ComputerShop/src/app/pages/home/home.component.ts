@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { SliderComponent } from '../slider/slider.component';
-import { ProductNavbarComponent } from '../product-navbar/product-navbar.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { SliderComponent } from '../../components/slider/slider.component';
+import { ProductNavbarComponent } from '../../components/product-navbar/product-navbar.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
