@@ -3,11 +3,7 @@
     text-align: center;
     padding: 5px;
 }
-.all-products{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 10 0px;
-}
+
 img{
     width: 150px;
     height: 150px;

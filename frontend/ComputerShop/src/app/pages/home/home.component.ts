@@ -12,9 +12,7 @@ import { ProductComponentComponent } from '../../components/product-component/pr
   styleUrl: './home.component.css'
 })
 export class HomeComponent   {
-addToCart(product:any) {
-  console.log("Zamowienie:" , product);
-}
+
   userName : string = '';
   userSession: string = 'noLogged'
   products: string[] = [];
@@ -67,7 +65,7 @@ addToCart(product:any) {
     console.log(data); 
     return data; 
 }
-addToBasket(){
-  sessionStorage.setItem('order',JSON.stringify( this.products))
+addToCart(product:any) {
+  sessionStorage.setItem("order", JSON.stringify(product));
 }
 }

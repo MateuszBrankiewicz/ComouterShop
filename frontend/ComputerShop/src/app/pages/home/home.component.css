@@ -10,3 +10,8 @@ body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+.all-products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 10 0px;
+}

@@ -12,5 +12,6 @@ export class ProductComponentComponent {
 
   onButtonClick() {
     this.addToCart.emit(this.product);
+   
   }
 }

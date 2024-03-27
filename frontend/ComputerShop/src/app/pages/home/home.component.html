@@ -4,5 +4,6 @@
 
 ></app-slider>
 <h2>Polecane produkty</h2>
-
-<app-product-component *ngFor = "let product of products" class="products-section" [product]="products" (buttonClick)="addToCart($event)"  ></app-product-component>
+<div class="all-products">
+<app-product-component *ngFor = "let product of products" class="products-section" [product]="product" (addToCart)="addToCart($event)"></app-product-component>
+</div>
