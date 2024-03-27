@@ -11,8 +11,8 @@ class Cpu:
         self.socket = socket
         self.imgurl = imgurl
 class Cooler:
-    def __init__(self,model,pObr,halas,kolor,rozmiar,price,imgurl):
-        self.model = model
+    def __init__(self,name,pObr,halas,kolor,rozmiar,price,imgurl):
+        self.name = name
         self.pObr = pObr
         self.halas = halas
         self.kolor = kolor

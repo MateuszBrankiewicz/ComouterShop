@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent  {
   @Input() username: string = '';
-
+  @Input() userSession: string = '';
 }

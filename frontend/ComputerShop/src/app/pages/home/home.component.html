@@ -1,5 +1,8 @@
-<app-header username={{userName}}></app-header>
+<app-header username={{userName}} userSession={{userSession}}></app-header>
 <app-product-navbar></app-product-navbar>
 <app-slider [slides] = "slides"
 
 ></app-slider>
+<h2>Polecane produkty</h2>
+
+<app-product-component *ngFor = "let product of products" class="products-section" [product]="products" (buttonClick)="addToCart($event)"  ></app-product-component>

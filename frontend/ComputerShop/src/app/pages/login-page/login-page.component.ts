@@ -33,7 +33,7 @@ export class LoginPageComponent {
           password:res.password
         }
         alert("Udalo sie zalogowac")
-        localStorage.setItem('user',JSON.stringify(obj));
+        sessionStorage.setItem('user',JSON.stringify(obj));
         this.router.navigate([this.homePage])
       }
       else{

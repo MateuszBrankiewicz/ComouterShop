@@ -1,0 +1,27 @@
+.product-component{
+    color: var(--textColor);
+    text-align: center;
+    padding: 5px;
+}
+.all-products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 10 0px;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+.product-component:hover{
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+}
+h2{
+    color:var(--textColor);
+    text-align: center;
+    
+}
+.shopping-img{
+    width: 10px;
+    height: 10px;
+}

@@ -28,14 +28,14 @@ def getCoolers():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            model = row[0]
+            name = row[0]
             pObr = row[1]
             halas = row[2]
             kolor = row[3]
             rozmiar = row[4]
             price = row[5]
             imgurl = row[6]
-            cooler = partsClasses.Cooler(model, pObr, halas, kolor, rozmiar, price,imgurl)
+            cooler = partsClasses.Cooler(name, pObr, halas, kolor, rozmiar, price,imgurl)
             coolers.append(cooler.__dict__)
           
         return coolers
@@ -72,8 +72,8 @@ def getGpu():
             boostClock = row[4]
             color = row[5]
             length = row[6]
-            price = row[7]
-            imgurl = row[8]
+            price = row[8]
+            imgurl = row[9]
             gpu = partsClasses.Gpu(name, series, vram, baseClock, boostClock, color, length, price,imgurl)
             gpus.append(gpu.__dict__)
         return gpus
