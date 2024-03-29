@@ -12,6 +12,7 @@ import { ProductNavbarComponent } from '../../components/product-navbar/product-
 })
 export class BasketPageComponent {
   product:any;
+  summedPrice:number = 0;
 currentOrder :any[] = [];
   constructor(@Inject(DOCUMENT) private document : Document){
     const sessionStorage = document.defaultView?.sessionStorage;
@@ -20,7 +21,15 @@ currentOrder :any[] = [];
       
       if(orderData !== null){
       this.currentOrder = JSON.parse(orderData);
-        console.log(this.currentOrder);
+        this.getSummedPrice();
     }}
   }
-}
+  getSummedPrice() {
+    this.summedPrice = 0;
+    
+    for (const order of this.currentOrder) {
+      this.summedPrice += order.price * order.quantity; 
+    }
+  
+  
+}}

@@ -74,7 +74,7 @@ addToCart(product: any) {
     product.quantity = 1; 
     this.order.push(product);
   }
-  console.log(product.quantity);
+  console.log(this.order);
   sessionStorage.setItem("order", JSON.stringify(this.order));
 }
 }

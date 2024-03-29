@@ -8,10 +8,36 @@ h1{
 }
 .products{
     width: 48%;
-    display: flex;
+   display: flex;
+   flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    
 }
 .products h1{
     width: 100%;
+}
+.single{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+button{
+    width: 50%;
+    height: 50px;
+    color: var(--background);
+    background: var(--borderColor);
+    border-radius: 10px;
+    border: 1px solid var(--background);
+}
+.summary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: flex-start;
+}
+.main img{
+    width: 150px;
+    height: 150px;
 }

@@ -3,13 +3,16 @@
 <h1>Twoje zamowienie</h1>
 <div class="main">
     
-    <div *ngFor = "let product of currentOrder" class="products">
+    <div  class="products">
+        <div *ngFor = "let product of currentOrder" class="single">
         <h1>{{product.name}}</h1>
         <img src={{product.imgurl}} alt="product">
         <h2>Cena: <br>{{product.price}}</h2>
         <h3> Liczba sztuk: <br>{{product.quantity}}</h3>
     </div>
+    </div>
     <div class="summary">
-        <h1>Laczny koszt zamowienia</h1>
+        <h1>Laczny koszt zamowienia: {{summedPrice}}</h1>
+        <button >Przejdz do dostawy</button>
     </div>
 </div>
