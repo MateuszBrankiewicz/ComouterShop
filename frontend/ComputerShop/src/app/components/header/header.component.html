@@ -8,18 +8,19 @@
             
               <li class="active" id="acc">
                 @if (userSession ==="noLogged") {
-                  <a class={{userSession}} routerLink = '/login-page'><img class="nav-img" src="../../assets/img/outline_person_white_48dp.png"><p>{{username}}</p></a>
+                  <a class={{userSession}} routerLink = '/login-page'><img class="nav-img" src="../../assets/img/outline_person_white_48dp.png"></a>
                 }
                 @else {
-                  <!-- <a routerLink = '/login-page'><img class="nav-img" src="../../assets/img/outline_person_white_48dp.png"><p>{{username}}</p></a> -->
-                  <ul>
-                    <li>Twoje zamowienia</li>
-                    <li>Ustawienia konta</li>
-                    <li>Wyloguj</li>
+                  <div class="userAcc">
+                  <a routerLink = ''><img class="nav-img" src="../../assets/img/outline_person_white_48dp.png"></a>{{username}}  <ul id="user-navigation-bar">
+                    <li><a href="">Zamowienia</a></li>
+                    <li> <a href="">Ustawienia</a></li>
+                    <li><a href="">Wyloguj</a></li>
                   </ul>
+                </div>
                 }
               </li>
-            <li id="basket"><a href=""><img class="nav-img" src="../../assets/img/outline_shopping_bag_white_48dp.png"></a></li>
+            <li id="basket"><a routerLink="/basket-page"><img class="nav-img" src="../../assets/img/outline_shopping_bag_white_48dp.png"></a></li>
             <li id="help"><a href="">Pomoc</a></li>
             </ul>
 </header>

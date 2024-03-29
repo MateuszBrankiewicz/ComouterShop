@@ -38,6 +38,33 @@ img{
 ul:not(:first-child){
     align-self: flex-end;
 }
+.userAcc{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ flex-direction: column;
+}
+#user-navigation-bar{
+    display: none;
+    position: absolute;
+    background-color: var(--background);
+    list-style-type: none;
+    padding: 3px 0px;
+    width: 177px;
+    z-index: 100;
+    margin: 10px 0;
+    
+}
+#user-navigation-bar li{
+    margin: 2px 0px;
+}
+.userAcc:hover{
+    #user-navigation-bar{
+        display: block;
+      
+    }
+}
 @media screen and (max-width: 750px) {
    .basic-navigation{
         display: grid;

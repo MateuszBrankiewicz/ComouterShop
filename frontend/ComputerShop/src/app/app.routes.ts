@@ -3,6 +3,8 @@ import path from 'path';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { BasketPageComponent } from './pages/basket-page/basket-page.component';
+
 
 
 export const routes: Routes = [
@@ -12,5 +14,8 @@ export const routes: Routes = [
     {path: 'login-page', component: LoginPageComponent},
     {
         path:'register-page', component:RegisterPageComponent
+    },
+    {
+        path: 'basket-page', component:BasketPageComponent
     }
 ];

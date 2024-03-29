@@ -1,0 +1,15 @@
+<app-header></app-header>
+<app-product-navbar></app-product-navbar>
+<h1>Twoje zamowienie</h1>
+<div class="main">
+    
+    <div *ngFor = "let product of currentOrder" class="products">
+        <h1>{{product.name}}</h1>
+        <img src={{product.imgurl}} alt="product">
+        <h2>Cena: <br>{{product.price}}</h2>
+        <h3> Liczba sztuk: <br>{{product.quantity}}</h3>
+    </div>
+    <div class="summary">
+        <h1>Laczny koszt zamowienia</h1>
+    </div>
+</div>

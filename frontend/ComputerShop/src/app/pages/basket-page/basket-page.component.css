@@ -1,0 +1,17 @@
+h1{
+    color: var(--textColor);
+    text-align: center;
+}
+.main{
+    color: var(--textColor);
+    display: flex;
+}
+.products{
+    width: 48%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.products h1{
+    width: 100%;
+}

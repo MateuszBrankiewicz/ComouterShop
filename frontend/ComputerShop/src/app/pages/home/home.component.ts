@@ -17,6 +17,7 @@ export class HomeComponent   {
   userSession: string = 'noLogged'
   products: string[] = [];
   user:any
+  order:any[] = [];
   slides : any[] = [ 
   {
     url: './../assets/img/slider/2.avif',
@@ -48,7 +49,7 @@ export class HomeComponent   {
     this.getProductsTooHotShot()
   .then(products => {
     this.products = products;
-    console.log(products[0].imgurl);
+  
   })
   .catch(error => {
     console.error(error); 
@@ -65,7 +66,15 @@ export class HomeComponent   {
     console.log(data); 
     return data; 
 }
-addToCart(product:any) {
-  sessionStorage.setItem("order", JSON.stringify(product));
+addToCart(product: any) {
+  let existingProduct = this.order.find(item => item.name === product.name);
+  if (existingProduct) {
+    existingProduct.quantity = (existingProduct.quantity || 0) + 1;
+  } else {
+    product.quantity = 1; 
+    this.order.push(product);
+  }
+  console.log(product.quantity);
+  sessionStorage.setItem("order", JSON.stringify(this.order));
 }
 }
