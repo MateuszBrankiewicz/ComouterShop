@@ -3,7 +3,8 @@
     border: 2px solid var(--borderColor);
     align-items: center;
     border-radius: 28px;
-  
+    height: 40px;
+    justify-content: space-between;
     background: var(--borderColor);
 }
 img{
@@ -17,6 +18,6 @@ input{
     border: none;
     background: transparent;
 }
-.searchL::placeholder{
+.search::placeholder{
     background: var(--borderColor);
 }

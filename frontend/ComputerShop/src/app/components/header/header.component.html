@@ -1,27 +1,42 @@
 <header >
  
             <ul class='basic-navigation'>
-              <a routerLink="/">  <img id="main" src="../../assets/img/logo.png" alt="logo" class="logo"></a>
+              <a routerLink="/"> <span class="material-symbols-outlined">
+                computer
+                </span></a>
             <li id="search">
               <app-search class="search "></app-search>
             </li>
             
               <li class="active" id="acc">
                 @if (userSession ==="noLogged") {
-                  <a class={{userSession}} routerLink = '/login-page'><img class="nav-img" src="../../assets/img/outline_person_white_48dp.png"></a>
+                 
+                  <a class={{userSession}} routerLink = '/login-page'><span class="material-symbols-outlined">
+                    person
+                    </span></a>
                 }
                 @else {
                   <div class="userAcc">
-                  <a routerLink = ''><img class="nav-img" src="../../assets/img/outline_person_white_48dp.png"></a>{{username}}  <ul id="user-navigation-bar">
+                    <a class={{userSession}} routerLink = ''><span class="material-symbols-outlined">
+                      person
+                      </span></a>{{username}}  <ul id="user-navigation-bar">
                     <li><a href="">Zamowienia</a></li>
                     <li> <a href="">Ustawienia</a></li>
                     <li><a href="">Wyloguj</a></li>
-                    <li> <button (click)="toggleTheme()">Toggle Theme</button></li>
+                    <!-- <li><div class="toggle-btn">
+                      <span>Dark</span>
+                      <img src="../../../assets/img/theme/moon.png" >
+                    </div></li> -->
+                   
                   </ul>
                 </div>
                 }
               </li>
-            <li id="basket"><a routerLink="/basket-page"><img class="nav-img" src="../../assets/img/outline_shopping_bag_white_48dp.png"></a></li>
+            <li id="basket"><a routerLink="/basket-page"><span class="material-symbols-outlined">
+              shopping_bag
+              </span></a></li>
             <li id="help"><a href="">Pomoc</a></li>
+            <li> <button class="toggle-btn" (click)="toggleTheme()"> <span id="btn-text">Dark</span>
+              <img id ="btn-icon" src="../../../assets/img/theme/moon.png" ></button></li>
             </ul>
 </header>
