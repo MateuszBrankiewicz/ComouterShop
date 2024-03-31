@@ -1,3 +1,6 @@
 
-
-<router-outlet></router-outlet>
+<div [ngClass]="getTheme()" class="theme-setter">
+    <div class="router-outlet-wrapper">
+        <router-outlet class="router-outlet"></router-outlet>
+    </div>
+</div>

@@ -34,6 +34,7 @@ ul li a{
 img{
     height: 56px;
     width: 56px;
+    color: var(--textColor);
 }
 ul:not(:first-child){
     align-self: flex-end;

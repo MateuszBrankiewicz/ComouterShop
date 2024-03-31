@@ -4,6 +4,7 @@ import { SliderComponent } from '../../components/slider/slider.component';
 import { ProductNavbarComponent } from '../../components/product-navbar/product-navbar.component';
 import { DOCUMENT, NgFor } from '@angular/common';
 import { ProductComponentComponent } from '../../components/product-component/product-component.component';
+import { ThemeService } from '../../theme.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -35,7 +36,7 @@ export class HomeComponent   {
     url: './../assets/img/slider/4.jpg',
     title: 'Slide 4'
   }];
-  constructor(@Inject(DOCUMENT) private document:Document){
+  constructor(@Inject(DOCUMENT) private document:Document, private themeService: ThemeService){
     const sessionStorage = document.defaultView?.sessionStorage;
     if(sessionStorage){
     const userData = sessionStorage.getItem('user')
@@ -54,8 +55,15 @@ export class HomeComponent   {
   .catch(error => {
     console.error(error); 
   });
-  }}
+  }
+}
+toggleTheme() {
+  this.themeService.toggleTheme();
+}
 
+getTheme() {
+  return this.themeService.getCurrentTheme();
+}
   async getProductsTooHotShot() {
     const response = await fetch("http://127.0.0.1:5000/");
     
@@ -76,5 +84,6 @@ addToCart(product: any) {
   }
   console.log(this.order);
   sessionStorage.setItem("order", JSON.stringify(this.order));
+  alert('dodano do koszyka')
 }
 }

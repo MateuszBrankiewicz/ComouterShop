@@ -3,6 +3,33 @@
     --textColor:#ffffff;
     --borderColor: #a37c40;
 }
-body{
-    background-color: var(--background);
+
+.dark-theme {
+    --borderColor: #a37c40;
+    --background: #07090F;
+    --textColor: #ffffff;
 }
+
+.light-theme{
+    --borderColor: #b04759;
+    --background: #d9d9d9;
+    --textColor: #272727;
+}
+.theme-setter{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--background);
+    color: var(--textColor);
+}
+.router-outlet-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.router-outlet {
+    visibility: hidden; }

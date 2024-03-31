@@ -5,9 +5,10 @@ h1{
 .main{
     color: var(--textColor);
     display: flex;
+    flex-direction: column;
 }
 .products{
-    width: 48%;
+    width: 95%;
    display: flex;
    flex-direction: column;
     flex-wrap: wrap;
@@ -29,6 +30,22 @@ button{
     background: var(--borderColor);
     border-radius: 10px;
     border: 1px solid var(--background);
+    cursor: pointer;
+}
+#cancel{
+    background: var(--background);
+    border: 1px solid var(--borderColor);
+    color: var(--textColor);
+    margin-top: 1%;
+}
+#cancel:hover{
+    color: var(--background);
+    background: var(--borderColor); 
+}
+button:hover{
+    background: var(--background);
+    border: 1px solid var(--borderColor);
+    color: var(--textColor);
 }
 .summary{
     display: flex;
@@ -36,8 +53,25 @@ button{
     align-items: center;
     flex-direction: column;
     align-self: flex-start;
+    width: 90%;
+    height: 40%;
+    padding: 3px;
+    margin: 4%;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
 }
 .main img{
     width: 150px;
     height: 150px;
+}
+@media screen and (min-width:700px) {
+    .main{
+        flex-direction: row;
+    }
+    .products{
+        width: 48%;
+    }
+    .summary{
+        width: 46%;
+    }
 }

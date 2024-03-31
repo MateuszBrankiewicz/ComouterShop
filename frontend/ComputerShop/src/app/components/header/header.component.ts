@@ -1,6 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { SearchComponent } from '../search/search.component';
 import { RouterLink } from '@angular/router';
+import { ThemeService } from '../../theme.service';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -9,6 +10,17 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent  {
+
   @Input() username: string = '';
   @Input() userSession: string = '';
+  constructor(private themeService: ThemeService) {}
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
+  getTheme() {
+    return this.themeService.getCurrentTheme();
+  }
+
 }

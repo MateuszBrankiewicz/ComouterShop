@@ -4,8 +4,21 @@
     --textColor:#ffffff;
     --borderColor: #a37c40;
 }
+
+.dark-theme {
+    --borderColor: #a37c40;
+    --background: #07090F;
+    --textColor: #ffffff;
+}
+
+.light-theme{
+    --borderColor: #b04759;
+    --background: #d9d9d9;
+    --textColor: #272727;
+}
 body{
-    background-color: var(--background);
+    /* background-color: var(--background);
+    color: var(--textColor); */
     margin: 0;
     padding: 0;
 }
