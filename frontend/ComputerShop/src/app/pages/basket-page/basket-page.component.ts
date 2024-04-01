@@ -11,6 +11,10 @@ import { ProductNavbarComponent } from '../../components/product-navbar/product-
   styleUrl: './basket-page.component.css'
 })
 export class BasketPageComponent {
+removeOrder() {
+  sessionStorage.removeItem("order")
+  window.location.reload();
+}
   product:any;
   summedPrice:number = 0;
 currentOrder :any[] = [];

@@ -1,7 +1,8 @@
-import { Component,Input } from '@angular/core';
+import { Component,Inject,Input } from '@angular/core';
 import { SearchComponent } from '../search/search.component';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../theme.service';
+import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -13,7 +14,7 @@ export class HeaderComponent  {
 
   @Input() username: string = '';
   @Input() userSession: string = '';
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, @Inject(DOCUMENT) private document:Document) {}
 
   toggleTheme() {
     this.themeService.toggleTheme();
@@ -36,5 +37,11 @@ export class HeaderComponent  {
     btnIcon.src = "../../../assets/img/theme/moon.png"
     btnText.innerHTML = "Dark"
   }}
+  }
+  logout(){
+    const sessionStorage = this.document?.defaultView?.sessionStorage
+    if(sessionStorage){
+      sessionStorage.removeItem("user");
+    }
   }
 }

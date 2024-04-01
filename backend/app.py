@@ -25,6 +25,7 @@ def disk():
 def gpu():
       
     return jsonify(readFileFunctions.getGpu())
+
 @app.route('/api/register', methods=['POST'])
 def register():
     data = request.json

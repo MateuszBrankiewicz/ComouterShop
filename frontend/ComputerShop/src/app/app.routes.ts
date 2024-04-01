@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { BasketPageComponent } from './pages/basket-page/basket-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 
 
@@ -17,5 +18,8 @@ export const routes: Routes = [
     },
     {
         path: 'basket-page', component:BasketPageComponent
+    },
+    {
+        path:'products/:id', component: ProductPageComponent
     }
 ];

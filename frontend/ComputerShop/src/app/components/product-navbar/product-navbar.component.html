@@ -5,14 +5,14 @@
             <input type="checkbox" name="check" id="check">
             <span class="menu">
              
-            <li><a href="">Procesory</a></li>
-            <li><a href="">Karty Graficzne</a></li>
-            <li><a href="">Dyski</a></li>
-            <li><a href="">RAM</a></li>
-            <li><a href="">Zasilacze</a></li>
-            <li><a href="">Płyty główne</a></li>
-            <li><a href="">Chłodzenia</a></li>
-            <li><a href="">Peryferia</a><ul class="perypherials">
+            <li (click)="navigate('cpu')" ><a >Procesory</a></li>
+            <li (click)="navigate('gpu')"><a  >Karty Graficzne</a></li>
+            <li (click)="navigate('disks')"><a >Dyski</a></li>
+            <li (click)="navigate('ram')"><a >RAM</a></li>
+            <li (click)="navigate('epu')"><a >Zasilacze</a></li>
+            <li (click)="navigate('motherboard')"><a >Płyty główne</a></li>
+            <li (click)="navigate('cooler')"><a >Chłodzenia</a></li>
+            <li (click)="navigate('perypherials')"> <a >Peryferia</a><ul class="perypherials">
                 <li><a href="">Myszki</a></li>
                 <li><a href="">Klawiatury</a></li>
                 <li><a href="">Słuchawki</a></li>
