@@ -1,1 +1,5 @@
-<p>product-page works!</p>
+<app-header></app-header>
+<app-product-navbar></app-product-navbar>
+<div class="products">
+    <app-product-to-category-page *ngFor = "let product of data" [product]="product" [characteristik]="characteristik" [characteristik1]="characteristik1" [characteristik2]="characteristik2" [characteristik3]="characteristik3"></app-product-to-category-page>
+</div>
