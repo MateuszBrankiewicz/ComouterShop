@@ -12,19 +12,127 @@ CORS(app)
 @app.route('/')
 def index():
     return jsonify(readFileFunctions.getProducts())
+
+
+
 @app.route('/products/cpu')
 def cpu():
-    return jsonify(readFileFunctions.getCpus())
+    cpus = readFileFunctions.getCpus()
+    cpuData = []
+    
+    for cpu in cpus:
+        cpuInfo = {
+            'name': cpu['name'],
+            'price': cpu['price'],
+            'imgurl': cpu['imgurl']
+        }
+        
+        additionalAttributes = ['rdzenie', 'bazCzest', 'integra',  'socket']
+        for i, attr in enumerate(additionalAttributes):
+            if attr in cpu:
+                cpuInfo[f'charakterystik{i}'] = cpu[attr]
+        
+        cpuData.append(cpuInfo)
+    
+    return jsonify(cpuData)
+
 @app.route('/products/cooler')
 def cooler():
-    return jsonify(readFileFunctions.getCoolers())
+    coolers = readFileFunctions.getCoolers()
+    coolerData = []
+    for cooler in coolers:
+        coolerInfo = {
+            'name': cooler['name'],
+            'price': cooler['price'],
+            'imgurl': cooler['imgurl']
+        }
+        additionalAtribbutes = ["halas","rozmiar","kolor","pObr"]
+        for i, attr in enumerate(additionalAtribbutes):
+            if attr in cooler:
+                coolerInfo[f'charakterystik{i}'] = cooler[attr]
+        coolerData.append(coolerInfo)
+    return jsonify(coolerData)
 @app.route('/products/disks')
 def disk():
-    return jsonify(readFileFunctions.getDisks())
+    disks = readFileFunctions.getDisks()
+    diskData = []
+    for disk in disks:
+        diskInfo = {
+            'name': disk['name'],
+            'price': disk['price'],
+            'imgurl': disk['imgurl']
+        }
+        additionalAtribbutes = ["capacity","type","interface","factor"]
+        for i, attr in enumerate(additionalAtribbutes):
+            if attr in disk:
+                diskInfo[f'charakterystik{i}'] = disk[attr]
+        diskData.append(diskInfo)
+    return jsonify(diskData)
 @app.route('/products/gpu')
 def gpu():
-      
-    return jsonify(readFileFunctions.getGpu())
+    gpus = readFileFunctions.getGpu()
+    gpuData = []
+    for gpu in gpus:
+        gpuInfo = {
+            'name': gpu['name'],
+            'price': gpu['price'],
+            'imgurl': gpu['imgurl']
+        }
+        additionalAtribbutes = ["series","vram","baseClock","length"]
+        for i, attr in enumerate(additionalAtribbutes):
+            if attr in gpu:
+                gpuInfo[f'charakterystik{i}'] = gpu[attr]
+        gpuData.append(gpuInfo)
+    return jsonify(gpuData)
+    
+@app.route('/products/motherboard')
+def motherboard():
+    motherboards = readFileFunctions.getMotherboards()
+    motherboardData = []
+    for motherboard in motherboards:
+        motherboardInfo = {
+            'name': motherboard['name'],
+            'price': motherboard['price'],
+            'imgurl': motherboard['imgurl']
+        }
+        additionalAtribbutes = ["socket","form","maxMemory","ramSlots"]
+        for i, attr in enumerate(additionalAtribbutes):
+            if attr in motherboard:
+                motherboardInfo[f'charakterystik{i}'] = motherboard[attr]
+        motherboardData.append(motherboardInfo)
+    return jsonify(motherboardData)
+@app.route('/products/epu')
+def epu():
+    epus = readFileFunctions.getEpu()
+    epuData = []
+    for epu in epus:
+        epuInfo = {
+            'name': epu['name'],
+            'price': epu['price'],
+            'imgurl': epu['imgurl']
+        }
+        additionalAtribbutes = ["form","rating","watt","modular"]
+        for i, attr in enumerate(additionalAtribbutes):
+            if attr in epu:
+                epuInfo[f'charakterystik{i}'] = epu[attr]
+        epuData.append(epuInfo)
+    return jsonify(epuData)
+@app.route('/products/ram')
+def ram():
+    rams = readFileFunctions.getRams()
+    ramData = []
+    for ram in rams:
+        ramInfo = {
+            'name': ram['name'],
+            'price': ram['price'],
+            'imgurl': ram['imgurl']
+        }
+        additionalAtribbutes = ["type","capacity","latency","pricePerUnit"]
+        for i, attr in enumerate(additionalAtribbutes):
+            if attr in ram:
+                ramInfo[f'charakterystik{i}'] = ram[attr]
+        ramData.append(ramInfo)
+    return jsonify(ramData)
 
 @app.route('/api/register', methods=['POST'])
 def register():

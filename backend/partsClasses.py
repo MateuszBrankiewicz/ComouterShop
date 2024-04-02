@@ -41,3 +41,33 @@ class Gpu:
         self.length = length
         self.price = price
         self.imgurl = imgurl
+class MotherBoard:
+    def __init__(self,name,socket,form,maxMemory,ramSlots,price,imgUrl):
+        self.name = name
+        self.socket = socket
+        self.form = form
+        self.maxMemoty = maxMemory
+        self.ramSlots = ramSlots
+        self.price = price
+        self.imgurl = imgUrl
+class Epu:
+    def __init__(self,name,form,rating,watt,modular,color,price,imgurl):
+        self.name = name
+        self.form = form
+        self.rating = rating
+        self.watt = watt
+        self.modular = modular
+        self.color = color
+        self.price = price
+        self.imgurl = imgurl
+class Ram:
+    def __init__(self,name,type,capacity,price,latency,pricePerUinit,imgurl):
+        self.name = name
+        self.type = type
+        self.capacity = capacity
+        self.price = price
+        self.latency = latency
+        self.pricePerUnit = pricePerUinit
+        self.imgurl = imgurl
+
+    

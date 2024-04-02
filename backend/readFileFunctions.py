@@ -77,6 +77,55 @@ def getGpu():
             gpu = partsClasses.Gpu(name, series, vram, baseClock, boostClock, color, length, price,imgurl)
             gpus.append(gpu.__dict__)
         return gpus
+
+def getMotherboards():
+    motherboards = []
+    with open('./parts/morherboards.csv', 'r') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            name = row[0]
+            socket = row[1]
+            form = row[2]
+            maxmemory = row[3]
+            ramSlots = row[4]
+            price = row[7]
+            imgurl = row[8]
+            motherboard = partsClasses.MotherBoard(name,socket,form,maxmemory,ramSlots,price,imgurl)    
+            motherboards.append(motherboard.__dict__)
+        return motherboards
+def getRams():
+    rams = []
+    with open('./parts/ram.csv', 'r') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            name = row[0]
+            type = row[1]
+            capacity = row[2]
+            price = row[3]
+            latency = row[4]
+            pricePerUnit = row[8]
+            imgurl = row[9]
+            ram = partsClasses.Ram(name, type, capacity, price,latency,pricePerUnit, imgurl)
+            rams.append(ram.__dict__)
+        return rams
+def getEpu():
+    epus = []
+    with open('./parts/epu.csv', 'r') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            name = row[0]
+            form = row[1]
+            rating = row[2]
+            watts = row[3]
+            modular = row[4]
+            color = row[5]
+            price = row[7]
+            imgurl = row[8]
+            epus.append(partsClasses.Epu(name,form,rating,watts,modular,color, price, imgurl).__dict__)
+        return epus
 def getProducts():
     products = []
     products.extend(getGpu())
