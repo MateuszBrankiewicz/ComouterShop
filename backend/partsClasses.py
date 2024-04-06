@@ -46,7 +46,7 @@ class MotherBoard:
         self.name = name
         self.socket = socket
         self.form = form
-        self.maxMemoty = maxMemory
+        self.maxMemory = maxMemory
         self.ramSlots = ramSlots
         self.price = price
         self.imgurl = imgUrl

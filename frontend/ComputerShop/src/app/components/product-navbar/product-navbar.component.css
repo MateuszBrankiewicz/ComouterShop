@@ -23,6 +23,7 @@ nav ul li a{
 }
 ul li:hover{
     background: var(--borderColor);
+    cursor: pointer;
 }
 ul li:hover ul {
     position: absolute;

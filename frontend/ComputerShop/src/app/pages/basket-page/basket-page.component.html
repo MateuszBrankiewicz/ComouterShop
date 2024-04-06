@@ -8,12 +8,19 @@
         <h1>{{product.name}}</h1>
         <img src={{product.imgurl}} alt="product">
         <h2>Cena: <br>{{product.price}}</h2>
-        <h3> Liczba sztuk: <br>{{product.quantity}}</h3>
+        
+        <div class="product-quantity">
+            <span>Liczba sztuk:</span> 
+            <button (click)="deleteSingleProduct(product)" class="counter">-</button>
+             <p>{{product.quantity}}</p> 
+             <button (click)="addSingleProduct(product)" class="counter">+</button>
+        </div>
+        
     </div>
     </div>
     <div class="summary">
         <h1>Laczny koszt zamowienia: {{summedPrice}}</h1>
         <button >Przejdz do dostawy</button>
-        <button (click) = "removeOrder()" id="cancel">Anulij zamowienie</button>
+        <button (click) = "removeOrder()" id="cancel">Anuluj zamowienie</button>
     </div>
 </div>

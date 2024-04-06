@@ -36,4 +36,20 @@ currentOrder :any[] = [];
     }
   
   
+}
+  addSingleProduct(product:any) {
+    this.currentOrder.map(item => {
+      if (item.name === product.name) {
+        item.quantity++;
+      }
+    })
+    this.getSummedPrice();
+}
+deleteSingleProduct(product:any) {
+  this.currentOrder.map(item => {
+    if (item.name === product.name) {
+      item.quantity--;
+    }
+  })
+  this.getSummedPrice();
 }}

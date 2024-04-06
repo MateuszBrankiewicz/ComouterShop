@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,EventEmitter,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product-to-category-page',
@@ -14,4 +14,8 @@ export class ProductToCategoryPageComponent {
   @Input() characteristik1 = '';
   @Input() characteristik2 = '';
   @Input() characteristik3 = '';
+  @Output () addToCart: EventEmitter<any> = new EventEmitter();
+  clickedButton(){
+    this.addToCart.emit(this.product);
+  }
 }

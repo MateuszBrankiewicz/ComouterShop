@@ -23,6 +23,32 @@ h1{
    flex-wrap: wrap;
    justify-content: space-between;
 }
+.counter{
+    width: 20px;
+    height: 20px;
+   
+    border-radius: 0;
+    
+}
+p{
+    margin: 0;
+}
+span{
+    width: 100%;
+}
+.product-quantity{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+.product-quantity h3{
+    width: 100%;
+    margin: 0;
+}
+.product-quantity span{
+    margin: 0;
+}
 button{
     width: 50%;
     height: 50px;

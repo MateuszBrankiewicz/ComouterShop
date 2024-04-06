@@ -1,7 +1,18 @@
 .products{
+        margin: 0 2%;
+        text-align: center;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        
+        grid-template-columns: repeat(1, 1fr);       
         grid-column-gap: 5px;
         grid-row-gap: 5px; 
+}
+@media screen and (min-width:740px) {
+        .products{
+                grid-template-columns: repeat(2,1fr);
+        }
+}
+@media screen and (min-width: 1150px) {
+        .products{
+                grid-template-columns: repeat(3,1fr);
+        }
 }

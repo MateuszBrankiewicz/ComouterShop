@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-product-navbar',
@@ -9,9 +10,10 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './product-navbar.component.css'
 })
 export class ProductNavbarComponent {
-  constructor(private route:Router){}
+  constructor(private route:Router, private dataService:DataServiceService){}
   navigate(id:string){
     console.log(id);
     this.route.navigate(['/products',id]);
+    this.dataService.executeFunction();
   }
 }

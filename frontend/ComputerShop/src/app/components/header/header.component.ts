@@ -1,12 +1,12 @@
 import { Component,Inject,Input } from '@angular/core';
-import { SearchComponent } from '../search/search.component';
+import { LoginInputComponent } from '../login-input/login-input.component';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../theme.service';
 import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports:[SearchComponent,RouterLink],
+  imports:[LoginInputComponent,RouterLink],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -22,8 +22,9 @@ export class HeaderComponent  {
   }
 
   getTheme() {
-    return this.themeService.getCurrentTheme();
     this.changeButtonContent();
+    return this.themeService.getCurrentTheme();
+    
   }
   changeButtonContent(){
     let btnText = document.getElementById("btn-text");
