@@ -28,3 +28,6 @@ a{
     text-decoration: none;
     color: var(--borderColor);
 }
+p {
+    margin: 5px;
+}

@@ -11,11 +11,11 @@
   .input input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--borderColor);
     border-radius: 5px;
     font-size: 16px;
     background: transparent;
-    color: white;
+    color: var(--textColor);
 
   }
   

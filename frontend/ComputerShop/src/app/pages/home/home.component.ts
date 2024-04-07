@@ -8,7 +8,7 @@ import { ThemeService } from '../../theme.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent,SliderComponent,ProductNavbarComponent,ProductComponentComponent,NgFor],
+  imports: [HeaderComponent,SliderComponent,ProductComponentComponent,NgFor],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

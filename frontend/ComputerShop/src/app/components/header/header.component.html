@@ -1,12 +1,12 @@
 <header >
- 
+            <div class="user-navigation">
             <ul class='basic-navigation'>
               <a routerLink="/"> <span class="material-symbols-outlined">
                 computer
                 </span></a>
-            <li id="search">
+            <!-- <li id="search">
               <app-login-input pathToImg="../../../assets/img/search.png" class="search "></app-login-input>
-            </li>
+            </li> -->
             
               <li class="active" id="acc">
                 @if (userSession ==="noLogged") {
@@ -34,4 +34,6 @@
             <li> <button class="toggle-btn" (click)="toggleTheme()"> <span id="btn-text">Dark</span>
               <img id ="btn-icon" src="../../../assets/img/theme/moon.png" ></button></li>
             </ul>
+          </div>
+            <app-product-navbar class="product-navbar"></app-product-navbar>
 </header>

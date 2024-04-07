@@ -6,9 +6,14 @@
 body{
     background-color: var(--background);
 }
+h2{
+    text-align: center;
+}
 .product-sesion{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    column-gap: 1%;
+    row-gap: 1%;
 }
 .all-products{
     display: grid;

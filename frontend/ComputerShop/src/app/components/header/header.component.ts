@@ -3,10 +3,11 @@ import { LoginInputComponent } from '../login-input/login-input.component';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../theme.service';
 import { DOCUMENT } from '@angular/common';
+import { ProductNavbarComponent } from '../product-navbar/product-navbar.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports:[LoginInputComponent,RouterLink],
+  imports:[LoginInputComponent,RouterLink,ProductNavbarComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })

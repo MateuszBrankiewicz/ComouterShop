@@ -1,6 +1,9 @@
 
-ul li :last-child{
+/* ul li :last-child{
     margin-right: 20px;
+} */
+header{
+    border-bottom: 1px solid var(--borderColor);
 }
 .basic-navigation{
     display: flex;
@@ -82,7 +85,7 @@ ul:not(:first-child){
     margin: 10px 0;
     
 }
-#user-navigation-bar li{
+#user-navigation-bar li :not(:last-child){
     margin: 2px 0px;
 }
 .userAcc:hover{
@@ -91,26 +94,53 @@ ul:not(:first-child){
       
     }
 }
-@media screen and (max-width: 750px) {
+@media screen  and (max-width:750px){
+    header{
+        padding-bottom: 15px;
+    }
+}
+@media screen and (max-width: 500px) {
    .basic-navigation{
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
+    grid-column-gap: 10px;
     grid-row-gap: 10px; 
+    
         } 
         
-    
+    ul li{
+        margin-left: 1%;
+    }
     #main{ grid-area: 1 / 1 / 2 / 2; } 
-    #search{ grid-area: 2 / 1 / 3 / 3;  } 
+    /* #search{ grid-area: 1 / 2 / 2 / 3; 
+    place-self: center; }  */
     .account{ grid-area: 1 / 2 / 2 / 3; } 
     #basket{
          grid-area: 1 / 3 / 2 / 4; } 
     
     #help{
-        grid-area: 1 / 4 / 2 / 5;
+        grid-area: 2 / 2 / 3 / 3;
     }
     .toggle-btn{
-        grid-area: 2 / 4 / 3 / 5;
+        width: 110px;
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    header{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "user-navigation user-navigation ."
+          "user-navigation user-navigation product-navbar"; 
+      }
+    .user-navigation{
+        grid-area: user-navigation;
+    }
+    .product-navbar{
+        margin-top: 15px;
+        grid-area: product-navbar;
     }
 }

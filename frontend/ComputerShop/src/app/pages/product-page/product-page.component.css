@@ -6,6 +6,10 @@
         grid-column-gap: 5px;
         grid-row-gap: 5px; 
 }
+.product:hover{
+        border: 1px solid var(--borderColor);
+        border-radius: 10px;
+}
 @media screen and (min-width:740px) {
         .products{
                 grid-template-columns: repeat(2,1fr);
