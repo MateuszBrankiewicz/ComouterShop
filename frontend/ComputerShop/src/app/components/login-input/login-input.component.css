@@ -32,4 +32,11 @@
     width: 20px;
     height: 20px;
   }
-  
+  .error{
+    border: 1px solid red;
+    color: red;
+    font-size: small;
+  }
+  .text-error{
+    color: red;
+  }

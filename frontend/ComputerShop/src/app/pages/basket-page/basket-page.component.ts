@@ -30,11 +30,12 @@ currentOrder :any[] = [];
   }
   getSummedPrice() {
     this.summedPrice = 0;
-    
+    let temp :number = 0;
     for (const order of this.currentOrder) {
       this.summedPrice += order.price * order.quantity; 
+      
     }
-  
+    
   
 }
   addSingleProduct(product:any) {
