@@ -1,0 +1,134 @@
+<app-header></app-header>
+<h1>Dostawa i płatność</h1>
+<main>
+  <form action="post">
+    <div class="select-delivery-method">
+      <h4>Sposób dostawy</h4>
+      <label for="kurier">
+        <div class="text">
+          <input
+            type="radio"
+            name="delivery"
+            class="delivery"
+            value="Kurier"
+            id="kurier"
+            required
+          />
+          <p>Kurier </p>
+        </div>
+        <span class="material-symbols-outlined"> local_shipping </span>
+      </label>
+      <label for="shop">
+        <div class="text">
+          <input
+            type="radio"
+            class="delivery"
+            name="delivery"
+            value="Shop"
+            id="shop"
+            required
+          />
+          <p>Odbiór w sklepie</p>
+        </div>
+        <span class="material-symbols-outlined"> local_convenience_store </span>
+      </label>
+      <label for="inpost">
+        <div class="text">
+          <input
+            type="radio"
+            class="delivery"
+            name="delivery"
+            value="InPost"
+            id="inpost"
+            required
+          />
+          <p>InPost</p>
+        </div>
+        <span class="material-symbols-outlined"> package </span>
+      </label>
+      <label for="other">
+        <div class="text">
+          <input
+            type="radio"
+            class="delivery"
+            name="delivery"
+            value="OtherDeliveryPoints"
+            id="other"
+            required
+          />
+          <p>Inne punkty odbioru</p>
+        </div>
+        <span class="material-symbols-outlined"> other_admission </span>
+      </label>
+      <input type="hidden" name="dummy" value="" required />
+    </div>
+    <div class="personal-data">
+      <h4>Adres dostawy</h4>
+      <input type="text" placeholder="Imię" class="input" required />
+      <input type="text" placeholder="Nazwisko" class="input" required />
+      <input type="text" placeholder="Kod Pocztowy"  class="input" required pattern="[0-9]{2}-[0-9]{3}" />
+      <input type="text" placeholder="Miejscowość" class="input" required />
+      <input type="tel" placeholder="Numer telefonu"  class="input" required pattern="[0-9]{9}" />
+      <input type="email" placeholder="email"  class="input" required />
+    </div>
+    <div class="payment">
+      <label for="online">
+        <div class="text">
+          <input type="radio" name="payment" id="online" required /> Płatność online
+        </div>
+        <img src="../../../assets/img/payments/przelewy24-lm.webp" alt="" />
+      </label>
+      <label for="creditCard">
+        <div class="text">
+          <input type="radio" name="payment" id="creditCard" required /> Karta płatnicza online
+        </div>
+        <img src="../../../assets/img/payments/credit-card-lm.webp" alt="" />
+      </label>
+      <label for="blik">
+        <div class="text">
+          <input type="radio" name="payment" id="blik" required /><p>Blik</p>
+        </div>
+        <img src="../../../assets/img/payments/blik-lm.webp" alt="" />
+      </label>
+      <label for="traditionalTransfer">
+        <div class="text">
+          <input type="radio" name="payment" id="traditionalTransfer" required /> Przelew tradycyjny
+        </div>
+        <img src="../../../assets/img/payments/bank-transfer-lm.webp" alt="" />
+      </label>
+      <label for="uponReceipt">
+        <div class="text">
+          <input type="radio" name="payment" id="uponReceipt" required /> Przy odbiorze
+        </div>
+        <img src="../../../assets/img/payments/cash-lm.webp" alt="" />
+      </label>
+    </div>
+    <div class="regs">
+      <label class="regs-label" for="regulamin">
+        <input type="checkbox" name="regs" id="regulamin" required />Akceptuje
+        <a href="regulamin">regulamin</a> sklepu
+      </label>
+      <label class="regs-label" for="opinia">
+        <input type="checkbox" name="regs" id="opnia" /> Chce podzielić się opinią o satysfakcji z zakupów
+      </label>
+    </div>
+    <app-button-component class="low-resulution-button" text="Podsumowanie"></app-button-component>
+  </form>
+  <aside class="products">
+    <div *ngFor = "let product of currentOrder" class="single">
+     <h3 class="product-tittle">{{product.name}}</h3>
+     <div class="text-img">
+      <img class="product-img" src={{product.imgurl}} alt="product">
+   
+      <h5>Cena: <br>{{product.price}}</h5>
+      
+      <div class="product-quantity">
+          <p class="quantity">Liczba sztuk:</p> 
+         
+           <p>{{product.quantity}}</p> 
+          </div>
+      </div>
+    </div>
+    <app-button-component class="high-resulotiun-button"></app-button-component>
+  </aside>
+</main>

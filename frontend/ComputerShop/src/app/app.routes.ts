@@ -5,6 +5,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { BasketPageComponent } from './pages/basket-page/basket-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { OrderPageComponent } from './pages/order-page/order-page.component';
 
 
 
@@ -21,5 +22,8 @@ export const routes: Routes = [
     },
     {
         path:'products/:id', component: ProductPageComponent
+    },
+    {
+        path: 'order-page', component: OrderPageComponent
     }
 ];

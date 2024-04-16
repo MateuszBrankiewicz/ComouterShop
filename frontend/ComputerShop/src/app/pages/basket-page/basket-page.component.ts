@@ -2,11 +2,11 @@ import { DOCUMENT, NgFor } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ProductNavbarComponent } from '../../components/product-navbar/product-navbar.component';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-basket-page',
   standalone: true,
-  imports: [NgFor,HeaderComponent,ProductNavbarComponent],
+  imports: [NgFor,HeaderComponent,ProductNavbarComponent,RouterLink],
   templateUrl: './basket-page.component.html',
   styleUrl: './basket-page.component.css'
 })
