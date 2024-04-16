@@ -162,17 +162,23 @@ def register():
     
     return jsonify({'result': 'Rejestracja udana'}), 200
 
-@app.route('/api/login', methods = ['POST'])
+
+@app.route('/api/login', methods=['POST'])
 def login():
     data = request.json
     print(data)
+    if 'email' not in data or 'password' not in data:
+        return jsonify({'message': 'Brak wymaganych danych logowania'}), 400
+    
     with open('./users/users.csv', 'r') as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            print(row[3],row[4])
-            if(data['email'] == row[3] and data['password'] == row[4]):
-                  return jsonify({'result': 'Logowanie udane', 'name':row[1],'surname':row[2],'email':row[3],'password':row[4]}), 200
-    return jsonify({'message': 'Niepoprawne dane logowania'}), 400
+            if data['email'] == row[3]:
+                if data['password'] == row[4]:
+                    return jsonify({'result': 'Logowanie udane', 'name': row[1], 'surname': row[2], 'email': row[3]}), 200
+                else:
+                    return jsonify({'result': 'Niepoprawne hasło'}), 403
+        return jsonify({'result': 'Niepoprawny email'}), 403
 if __name__ == '__main__':
     app.run(debug=True)

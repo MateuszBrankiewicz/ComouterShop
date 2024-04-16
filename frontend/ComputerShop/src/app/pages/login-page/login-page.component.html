@@ -1,13 +1,15 @@
 <div id="temp">
 <div class="main">
     <h1>Logowanie</h1>
-    <app-login-input 
+    <app-login-input
+    id="login" 
     type="text" 
     pattern="[a-zA-Z]*" 
     placeholder="Podaj email" 
     [(ngModel)] = "loginPageObj.email"
   ></app-login-input>
-  <app-login-input 
+  <app-login-input
+  id="password" 
   type="password" 
   pattern="[a-zA-Z]*" 
   placeholder="Podaj haslo" 

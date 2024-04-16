@@ -31,7 +31,6 @@ export class LoginInputComponent implements ControlValueAccessor {
   @Input() pattern: string = "";
   @Input() placeholder: string = "";
   @Input() pathToImg: string = "../../assets/img/outline_person_white_48dp.png";
-
   value: any;
   onChange: any = () => {};
   onTouched: any = () => {};
