@@ -8,12 +8,14 @@
     --borderColor: #a37c40;
     --background: #07090F;
     --textColor: #ffffff;
+    --glassmorph:rgba( 255, 255, 255, 0.2 );
 }
 
 .light-theme{
     --borderColor: #b04759;
     --background: #d9d9d9;
     --textColor: #272727;
+    --glassmorph:rgba( 255, 255, 255, 0.65 );
 }
 .theme-setter{
     margin: 0;

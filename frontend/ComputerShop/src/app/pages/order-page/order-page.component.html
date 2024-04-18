@@ -16,7 +16,7 @@
           />
           <p>Kurier </p>
         </div>
-        <span class="material-symbols-outlined"> local_shipping </span>
+        <div class="delivery"> <span class="material-symbols-outlined"> local_shipping </span> +{{delivery1}}zł</div>
       </label>
       <label for="shop">
         <div class="text">
@@ -30,7 +30,7 @@
           />
           <p>Odbiór w sklepie</p>
         </div>
-        <span class="material-symbols-outlined"> local_convenience_store </span>
+      <div class="delivery"> <span class="material-symbols-outlined"> local_convenience_store </span> +{{delivery2}}zł</div>
       </label>
       <label for="inpost">
         <div class="text">
@@ -44,7 +44,7 @@
           />
           <p>InPost</p>
         </div>
-        <span class="material-symbols-outlined"> package </span>
+        <div class="delivery">  <span class="material-symbols-outlined"> package </span>+{{delivery3}}zł</div>
       </label>
       <label for="other">
         <div class="text">
@@ -58,7 +58,7 @@
           />
           <p>Inne punkty odbioru</p>
         </div>
-        <span class="material-symbols-outlined"> other_admission </span>
+        <div class="delivery"> <span class="material-symbols-outlined"> other_admission </span> +{{delivery4}}zł</div>
       </label>
       <input type="hidden" name="dummy" value="" required />
     </div>
@@ -112,9 +112,9 @@
         <input type="checkbox" name="regs" id="opnia" /> Chce podzielić się opinią o satysfakcji z zakupów
       </label>
     </div>
-    <app-button-component class="low-resulution-button" text="Podsumowanie"></app-button-component>
   </form>
   <aside class="products">
+    <div class="content">
     <div *ngFor = "let product of currentOrder" class="single">
      <h3 class="product-tittle">{{product.name}}</h3>
      <div class="text-img">
@@ -129,6 +129,14 @@
           </div>
       </div>
     </div>
-    <app-button-component class="high-resulotiun-button"></app-button-component>
+  </div>
+    <div class="order-summary">
+     <div class="summary-single-component"> <p>Produkty i usługi</p><p> {{summedPrice}}</p></div> 
+     <div class="summary-single-component"> <p>Dostawa i płatność</p><p> {{summedPrice}}</p></div> 
+      <hr>
+      <div class="summary-single-component"> <p>Łączna kwota</p><p> {{summedPrice}}</p></div> 
+    <app-button-component (buttonClick)="submitOrderToSessionStorage()" text="Podsumowanie" class="high-resulotiun-button"></app-button-component>
+    </div>
   </aside>
+ 
 </main>
