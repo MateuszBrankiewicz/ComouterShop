@@ -1,26 +1,33 @@
 <app-header></app-header>
 <h1>Dostawa i płatność</h1>
 <main>
-  <form action="post">
+  <form [formGroup]="orderForm" (ngSubmit)="submitOrderToSessionStorage()">
     <div class="select-delivery-method">
       <h4>Sposób dostawy</h4>
       <label for="kurier">
         <div class="text">
           <input
             type="radio"
-            name="delivery"
+            formControlName="delivery"
             class="delivery"
+            name="delivery"
             value="Kurier"
             id="kurier"
             required
           />
-          <p>Kurier </p>
+          <p>Kurier</p>
         </div>
-        <div class="delivery"> <span class="material-symbols-outlined"> local_shipping </span> +{{delivery1}}zł</div>
+        <div class="delivery">
+          <span class="material-symbols-outlined"> local_shipping </span> +{{
+            delivery1
+          }}zł
+        </div>
       </label>
       <label for="shop">
         <div class="text">
           <input
+          name="delivery"
+          formControlName="delivery"
             type="radio"
             class="delivery"
             name="delivery"
@@ -30,11 +37,18 @@
           />
           <p>Odbiór w sklepie</p>
         </div>
-      <div class="delivery"> <span class="material-symbols-outlined"> local_convenience_store </span> +{{delivery2}}zł</div>
+        <div class="delivery">
+          <span class="material-symbols-outlined">
+            local_convenience_store
+          </span>
+          +{{ delivery2 }}zł
+        </div>
       </label>
       <label for="inpost">
         <div class="text">
           <input
+          name="delivery"
+          formControlName="delivery"
             type="radio"
             class="delivery"
             name="delivery"
@@ -44,11 +58,17 @@
           />
           <p>InPost</p>
         </div>
-        <div class="delivery">  <span class="material-symbols-outlined"> package </span>+{{delivery3}}zł</div>
+        <div class="delivery">
+          <span class="material-symbols-outlined"> package </span>+{{
+            delivery3
+          }}zł
+        </div>
       </label>
       <label for="other">
         <div class="text">
           <input
+          name="delivery"
+          formControlName="delivery"
             type="radio"
             class="delivery"
             name="delivery"
@@ -58,85 +78,158 @@
           />
           <p>Inne punkty odbioru</p>
         </div>
-        <div class="delivery"> <span class="material-symbols-outlined"> other_admission </span> +{{delivery4}}zł</div>
+        <div class="delivery">
+          <span class="material-symbols-outlined"> other_admission </span> +{{
+            delivery4
+          }}zł
+        </div>
       </label>
-      <input type="hidden" name="dummy" value="" required />
+      <div
+        *ngIf="
+          orderForm.get('delivery')?.invalid && orderForm.get('delivery')?.touched
+        "
+      >
+        <span *ngIf="orderForm.get('delivery')?.hasError('required')"
+          >Pole wymagane.</span
+        >
+      </div>
     </div>
     <div class="personal-data">
       <h4>Adres dostawy</h4>
-      <input type="text" placeholder="Imię" class="input" required />
-      <input type="text" placeholder="Nazwisko" class="input" required />
-      <input type="text" placeholder="Kod Pocztowy"  class="input" required pattern="[0-9]{2}-[0-9]{3}" />
-      <input type="text" placeholder="Miejscowość" class="input" required />
-      <input type="tel" placeholder="Numer telefonu"  class="input" required pattern="[0-9]{9}" />
-      <input type="email" placeholder="email"  class="input" required />
+      <input type="text" placeholder="Imię" class="input" required  formControlName = "firstName" />
+      <div *ngIf="orderForm.get('firstName')?.invalid && orderForm.get('firstName')?.touched" class="error-message">
+        <span class="error-message" *ngIf="orderForm.get('firstName')?.hasError('required')">Imię jest wymagane.</span>
+      </div>
+      <input type="text" placeholder="Nazwisko" class="input" required formControlName = "lastName" />
+      <div *ngIf="orderForm.get('lastName')?.invalid && orderForm.get('lastName')?.touched" class="error-message">
+        <span class="error-message" *ngIf="orderForm.get('lastName')?.hasError('required')">Nazwisko jest wymagane.</span>
+      </div>
+      <input
+      formControlName = "postalCode"
+        type="text"
+        placeholder="Kod Pocztowy"
+        class="input"
+        required
+        pattern="[0-9]{2}-[0-9]{3}"
+      />
+      <div *ngIf="orderForm.get('postalCode')?.invalid && orderForm.get('postalCode')?.touched" class="error-message">
+        <span class="error-message" *ngIf="orderForm.get('postalCode')?.hasError('required')">Kod pocztowy jest wymagany.</span>
+      </div>
+      <input type="text" placeholder="Miejscowość" class="input" required formControlName = "city" />
+      <div *ngIf="orderForm.get('city')?.invalid && orderForm.get('city')?.touched" class="error-message">
+        <span class="error-message" *ngIf="orderForm.get('city')?.hasError('required')">Miasto jest wymagane.</span>
+      </div>
+      <input
+      formControlName = "phoneNumber"
+        type="tel"
+        placeholder="Numer telefonu"
+        class="input"
+        required
+        pattern="[0-9]{9}"
+      />
+      <div *ngIf="orderForm.get('phoneNumber')?.invalid && orderForm.get('phoneNumber')?.touched" class="error-message">
+        <span class="error-message" *ngIf="orderForm.get('phoneNumber')?.hasError('required')">Numer telefonu jest wymagany.</span>
+      </div>
+      <input type="email" placeholder="email" class="input" required formControlName = "email" />
+    </div>
+    <div *ngIf="orderForm.get('email')?.invalid && orderForm.get('email')?.touched" class="error-message">
+      <span class="error-message" *ngIf="orderForm.get('email')?.hasError('required')">Imię jest wymagane.</span>
     </div>
     <div class="payment">
       <label for="online">
         <div class="text">
-          <input type="radio" name="payment" id="online" required /> Płatność online
+          <input type="radio" id="online" value="online" formControlName="payment" name="payment" required /> Płatność
+          online
         </div>
         <img src="../../../assets/img/payments/przelewy24-lm.webp" alt="" />
       </label>
       <label for="creditCard">
         <div class="text">
-          <input type="radio" name="payment" id="creditCard" required /> Karta płatnicza online
+          <input type="radio" id="creditCard" value="creditCard" formControlName="payment" name="payment" /> Karta
+          płatnicza online
         </div>
         <img src="../../../assets/img/payments/credit-card-lm.webp" alt="" />
       </label>
       <label for="blik">
         <div class="text">
-          <input type="radio" name="payment" id="blik" required /><p>Blik</p>
+          <input type="radio" id="blik" value="blik" formControlName="payment" name="payment" /> Blik
         </div>
         <img src="../../../assets/img/payments/blik-lm.webp" alt="" />
       </label>
       <label for="traditionalTransfer">
         <div class="text">
-          <input type="radio" name="payment" id="traditionalTransfer" required /> Przelew tradycyjny
+          <input type="radio" id="traditionalTransfer" value="traditionalTransfer" formControlName="payment" name="payment" /> Przelew
+          tradycyjny
         </div>
         <img src="../../../assets/img/payments/bank-transfer-lm.webp" alt="" />
       </label>
       <label for="uponReceipt">
         <div class="text">
-          <input type="radio" name="payment" id="uponReceipt" required /> Przy odbiorze
+          <input type="radio" id="uponReceipt" formControlName="payment" value="uponReceipt" name="payment" /> Przy
+          odbiorze
         </div>
         <img src="../../../assets/img/payments/cash-lm.webp" alt="" />
       </label>
+      <div *ngIf="orderForm.get('payment')?.invalid && orderForm.get('payment')?.touched">
+        <span *ngIf="orderForm.get('payment')?.hasError('required')">Pole wymagane.</span>
+      </div>
     </div>
+    
     <div class="regs">
       <label class="regs-label" for="regulamin">
-        <input type="checkbox" name="regs" id="regulamin" required />Akceptuje
+        <input type="checkbox" name="regs" id="regulamin" formControlName = "regulationsAccepted" required />Akceptuje
         <a href="regulamin">regulamin</a> sklepu
       </label>
+      <div *ngIf="
+          orderForm.get('regulationsAccepted')?.invalid && orderForm.get('regulationsAccepted')?.touched
+        "
+      >
+        <span *ngIf="orderForm.get('regulationsAccepted')?.hasError('required')"
+          >Pole wymagane.</span
+        >
+      </div>
       <label class="regs-label" for="opinia">
-        <input type="checkbox" name="regs" id="opnia" /> Chce podzielić się opinią o satysfakcji z zakupów
+        <input type="checkbox" name="regs" id="opnia" /> Chce podzielić się
+        opinią o satysfakcji z zakupów
       </label>
     </div>
   </form>
   <aside class="products">
     <div class="content">
-    <div *ngFor = "let product of currentOrder" class="single">
-     <h3 class="product-tittle">{{product.name}}</h3>
-     <div class="text-img">
-      <img class="product-img" src={{product.imgurl}} alt="product">
-   
-      <h5>Cena: <br>{{product.price}}</h5>
-      
-      <div class="product-quantity">
-          <p class="quantity">Liczba sztuk:</p> 
-         
-           <p>{{product.quantity}}</p> 
+      <div *ngFor="let product of currentOrder" class="single">
+        <h3 class="product-tittle">{{ product.name }}</h3>
+        <div class="text-img">
+          <img class="product-img" src="{{ product.imgurl }}" alt="product" />
+
+          <h5>Cena: <br />{{ product.price }}</h5>
+
+          <div class="product-quantity">
+            <p class="quantity">Liczba sztuk:</p>
+
+            <p>{{ product.quantity }}</p>
           </div>
+        </div>
       </div>
     </div>
-  </div>
     <div class="order-summary">
-     <div class="summary-single-component"> <p>Produkty i usługi</p><p> {{summedPrice}}</p></div> 
-     <div class="summary-single-component"> <p>Dostawa i płatność</p><p> {{summedPrice}}</p></div> 
-      <hr>
-      <div class="summary-single-component"> <p>Łączna kwota</p><p> {{summedPrice}}</p></div> 
-    <app-button-component (buttonClick)="submitOrderToSessionStorage()" text="Podsumowanie" class="high-resulotiun-button"></app-button-component>
+      <div class="summary-single-component">
+        <p>Produkty i usługi</p>
+        <p>{{ summedPrice }}</p>
+      </div>
+      <div class="summary-single-component">
+        <p>Dostawa i płatność</p>
+        <p>{{ summedPrice }}</p>
+      </div>
+      <hr />
+      <div class="summary-single-component">
+        <p>Łączna kwota</p>
+        <p>{{ summedPrice }}</p>
+      </div>
+      <app-button-component
+        (buttonClick)="submitOrderToSessionStorage()"
+        text="Podsumowanie"
+        class="high-resulotiun-button"
+      ></app-button-component>
     </div>
   </aside>
- 
 </main>

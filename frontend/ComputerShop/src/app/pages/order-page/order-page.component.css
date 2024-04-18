@@ -22,6 +22,10 @@ main{
     justify-content: center;
     align-items: center;
 }
+.error-message{
+    color: red;
+    font-size: 12px;
+}
 .select-delivery-method,.products, .personal-data, .payment, .regs{
     width: 100%;
     display: flex;
