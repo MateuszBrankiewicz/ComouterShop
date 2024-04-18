@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LoginInputComponent } from '../../components/login-input/login-input.component';
 import { ButtonComponentComponent } from '../../components/button-component/button-component.component';
 import { FormsModule } from '@angular/forms';
-
+import { LoginPageComponent } from '../login-page/login-page.component';
 
 import { Router } from '@angular/router';
 import { error } from 'console';
@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
+  loginPage : any = 'login-page';
   constructor(private http:HttpClient, private router:Router){}
   registerPageObj:any = {
   name:  '',
@@ -30,7 +31,7 @@ export class RegisterPageComponent {
    this.http.post('http://127.0.0.1:5000/api/register',this.registerPageObj).subscribe((res:any) =>{
     if(res.result){
       alert("Udalo sie zarejestrowac")
-     
+     this.router.navigate([this.loginPage]);
     }
     else{
       alert(res.message)

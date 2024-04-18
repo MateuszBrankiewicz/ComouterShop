@@ -11,12 +11,23 @@ h2{
 }
 .product-sesion{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 1%;
-    row-gap: 1%;
+    grid-template-columns: repeat(1,1fr);
+    column-gap: 2%;
+    row-gap: 2%;
 }
 .all-products{
+    margin: 1%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
    
+}
+@media screen and (min-width:720px) {
+    .all-products{
+        grid-template-columns: repeat(2,1fr);
+    }
+@media screen and (min-width:1440px) {
+    .all-products{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
 }

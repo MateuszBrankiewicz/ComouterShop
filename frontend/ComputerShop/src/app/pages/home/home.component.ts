@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SliderComponent } from '../../components/slider/slider.component';
-import { ProductNavbarComponent } from '../../components/product-navbar/product-navbar.component';
 import { DOCUMENT, NgFor } from '@angular/common';
 import { ProductComponentComponent } from '../../components/product-component/product-component.component';
 import { ThemeService } from '../../theme.service';
