@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, Inject, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ProductToCategoryPageComponent } from '../../components/product-to-category-page/product-to-category-page.component';
 import { ProductNavbarComponent } from '../../components/product-navbar/product-navbar.component';
-import { NgFor } from '@angular/common';
+import { DOCUMENT, NgFor } from '@angular/common';
 import { DataServiceService } from '../../components/data-service.service';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-product-page',
   standalone: true,
-  imports: [HeaderComponent,ProductToCategoryPageComponent,ProductNavbarComponent,NgFor],
+  imports: [HeaderComponent,ProductToCategoryPageComponent,ProductNavbarComponent,NgFor, FooterComponent],
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.css'
 })
@@ -23,7 +24,22 @@ export class ProductPageComponent implements OnInit {
   characteristik3: string = '';
   title:string = '';
   order : any[] = []
-  constructor(private route: ActivatedRoute, private dataService: DataServiceService) { }
+  userName:string = '';
+  userSession:string = '';
+  user:any;
+  constructor(private route: ActivatedRoute, private dataService: DataServiceService, @Inject(DOCUMENT) document:Document) { 
+    const sessionStorage = document.defaultView?.sessionStorage;
+    if(sessionStorage){
+      const userData = sessionStorage.getItem("user");
+      if(userData !== null){
+        this.user = JSON.parse(userData);
+        console.log(this.user.name);
+        this.userName = this.user.name;
+        this.userSession = 'logged';
+      }
+    }
+
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

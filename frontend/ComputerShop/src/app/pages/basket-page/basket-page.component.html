@@ -1,8 +1,7 @@
-<app-header></app-header>
-<app-product-navbar></app-product-navbar>
+<app-header username="{{userName}}" userSession = "{{userSession}}"></app-header>
+<div class="content">
 <h1>Twoje zamowienie</h1>
-<div class="main">
-    
+<div class="main">    
     <div  class="products">
         <div *ngFor = "let product of currentOrder" class="single">
         <h1>{{product.name}}</h1>
@@ -15,7 +14,6 @@
              <p>{{product.quantity}}</p> 
              <button (click)="addSingleProduct(product)" class="counter">+</button>
         </div>
-        
     </div>
     </div>
     <div class="summary">
@@ -24,3 +22,5 @@
         <button (click) = "removeOrder()" id="cancel">Anuluj zamowienie</button>
     </div>
 </div>
+</div>
+<app-footer></app-footer>

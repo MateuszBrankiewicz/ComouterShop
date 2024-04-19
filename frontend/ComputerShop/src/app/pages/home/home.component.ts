@@ -4,10 +4,11 @@ import { SliderComponent } from '../../components/slider/slider.component';
 import { DOCUMENT, NgFor } from '@angular/common';
 import { ProductComponentComponent } from '../../components/product-component/product-component.component';
 import { ThemeService } from '../../theme.service';
+import { FooterComponent } from '../../components/footer/footer.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent,SliderComponent,ProductComponentComponent,NgFor],
+  imports: [HeaderComponent,SliderComponent,ProductComponentComponent,NgFor,FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

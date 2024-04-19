@@ -26,6 +26,7 @@
     background-color: var(--background);
     color: var(--textColor);
     width: 100%;
+    
 }
 /* .router-outlet-wrapper {
     position: absolute;

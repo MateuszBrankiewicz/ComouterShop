@@ -1,7 +1,6 @@
-<div class="navigation">
+
 <app-header username={{userName}} userSession={{userSession}} ></app-header>
 
-</div>
 <app-slider [slides] = "slides"
 
 ></app-slider>
@@ -9,3 +8,4 @@
 <div class="all-products">
 <app-product-component *ngFor = "let product of products" class="products-section" [product]="product" (addToCart)="addToCart($event)"></app-product-component>
 </div>
+<app-footer></app-footer>
