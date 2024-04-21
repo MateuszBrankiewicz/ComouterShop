@@ -25,15 +25,15 @@ export class OrderPageComponent extends BasketPageComponent {
     super(document);
     this.orderForm = this.formBuilder.group({
       delivery: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      postalCode: ['', Validators.required],
-      city: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.pattern(/^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,20}$/)]],
+      lastName: ['', [Validators.required, Validators.pattern(/^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,40}$/)]],
+      postalCode: ['', [Validators.required, Validators.pattern(/[0-9]{2}-[0-9]{3}/)]],
+      city: ['', [Validators.required, Validators.pattern(/^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ\s]{2,50}$/)]],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/[0-9]{9}/)]],
       email: ['', [Validators.required, Validators.email]],
       payment: ['', Validators.required],
       regulationsAccepted: [false, Validators.requiredTrue],
-      opinion: [false]
+      opinion: [false] 
     });
    };
    submitOrderToSessionStorage() {
