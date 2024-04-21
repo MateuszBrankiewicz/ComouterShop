@@ -25,5 +25,6 @@ export const routes: Routes = [
     },
     {
         path: 'order-page', component: OrderPageComponent
-    }
+    },
+   
 ];

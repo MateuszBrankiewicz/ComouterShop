@@ -1,7 +1,7 @@
 <div class="temp">
 <div class="register-page">
     <h1>Rejestracja</h1>
-<<app-login-input 
+<app-login-input 
 type="text" 
 placeholder="Imie (wymagane)" 
 [(ngModel)]="registerPageObj.name">
@@ -30,11 +30,20 @@ type="password"
 placeholder="Powtorz haslo" 
 [(ngModel)]="registerPageObj.repeatPassword">
 </app-login-input>
-
 <h4>Zgody formalne</h4>
 <div class="regulamin">
 <input type="checkbox" #acceptRegulamin (blur)="(checkboxGetValue(acceptRegulamin.value))" name="regulamin" id="regulamin" required> Akceptuje <a href="">regulamin</a> sklepu *
 </div>
-<app-button-component text="Załóż konto" (buttonClick)="register()"></app-button-component>
+<app-button-component class="button" text="Załóż konto" (buttonClick)="register()"></app-button-component>
 </div>
+<aside>
+
+   <h4>Dlaczego warto założyć konto:</h4>
+    <ul class="user-information">
+      <li><img src="../../../assets/img/loginpage/login1.svg" alt=""> zamawiaj szybcjiej</li>
+      <li><img src="../../../assets/img/loginpage/login2.svg" alt=""> sprawdzaj poprzednie zamówienia</li>
+      <li> <img src="../../../assets/img/loginpage/login3.svg" alt=""> śledź status zamówienia</li>
+      <li><img src="../../../assets/img/loginpage/login4.svg" alt=""> korzystaj z rabatów i promocji</li>
+    </ul>
+  </aside>
 </div>

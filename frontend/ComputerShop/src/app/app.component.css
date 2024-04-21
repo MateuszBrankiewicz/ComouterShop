@@ -11,10 +11,16 @@
     --glassmorph:rgba( 255, 255, 255, 0.2 );
 }
 
-.light-theme{
+/* .light-theme{
     --borderColor: #b04759;
     --background: #d9d9d9;
     --textColor: #272727;
+    --glassmorph:rgba( 255, 255, 255, 0.65 );
+} */
+.light-theme{
+    --borderColor: rgb(0, 130, 250);
+    --background: rgb(255, 255, 255)
+    --textColor: rgb(26, 26, 26);
     --glassmorph:rgba( 255, 255, 255, 0.65 );
 }
 .theme-setter{

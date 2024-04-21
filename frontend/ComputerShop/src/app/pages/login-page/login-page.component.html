@@ -1,6 +1,10 @@
+<header>
+  <a routerLink="/"> <span  class="material-symbols-outlined logo">
+    computer
+    </span></a>  <p>Dobry wybór!</p></header>
 <div id="temp">
 <div class="main">
-    <h1>Logowanie</h1>
+    <h1>Zaloguj</h1>
     <app-login-input
     id="login" 
     type="text" 
@@ -17,6 +21,17 @@
 ></app-login-input>
 <app-button-component (buttonClick)="login()" text="Login"></app-button-component>
 <p>Zapomniałeś hasła? <a href="">Przypomnij hasło</a></p>
-<p>Nie masz konta? <a routerLink="/register-page" >Zarejestruj się</a></p>
+
 </div>
+<aside>
+  <h1>Nie masz konta?</h1>
+<button class="toRegisterPage" (click)="toRegisterPage()">Zarejestruj się</button> 
+ <h4>Dlaczego warto założyć konto:</h4>
+  <ul class="user-information">
+    <li><img src="../../../assets/img/loginpage/login1.svg" alt=""> zamawiaj szybcjiej</li>
+    <li><img src="../../../assets/img/loginpage/login2.svg" alt=""> sprawdzaj poprzednie zamówienia</li>
+    <li> <img src="../../../assets/img/loginpage/login3.svg" alt=""> śledź status zamówienia</li>
+    <li><img src="../../../assets/img/loginpage/login4.svg" alt=""> korzystaj z rabatów i promocji</li>
+  </ul>
+</aside>
 </div>

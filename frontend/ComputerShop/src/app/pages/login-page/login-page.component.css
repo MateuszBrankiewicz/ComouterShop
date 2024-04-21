@@ -1,7 +1,13 @@
 .main{
+    margin-top: 5%;
     color: var(--textColor);
-    border: 2px solid var(--borderColor);
+    background: var(--glassmorph);
     border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 app-button-component{
     width: 50%;
@@ -30,4 +37,59 @@ a{
 }
 p {
     margin: 5px;
+}
+header{
+    border-bottom: 1px solid rgb(221, 221, 221);
+    width: 100%;
+    padding: 16px 0 px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo{
+    font-size: 48px;
+}
+.toRegisterPage{
+    color: var(--borderColor);
+    background: var(--background);
+    border: 1px solid var(--borderColor);
+    width: 105%;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.toRegisterPage:hover{
+    background: var(--borderColor);
+    color: var(--background);
+
+}
+.user-information{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.user-information li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width:900px) {
+    #temp{
+        flex-direction: row;
+    }
+    .main{
+        width: 45%;
+        margin: 3%;
+    }
+    aside{
+        width: 45%;
+        margin: 5%;
+    }
+    .toRegisterPage{
+        width: 60%;
+    }
+    
 }

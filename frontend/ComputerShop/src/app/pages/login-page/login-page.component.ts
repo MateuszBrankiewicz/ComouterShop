@@ -47,5 +47,8 @@ export class LoginPageComponent {
       alert(error.error.result);
     });
   }
+  toRegisterPage(){
+    this.router.navigate(['register-page']);
+  }
   
 }

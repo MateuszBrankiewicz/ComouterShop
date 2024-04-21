@@ -41,6 +41,7 @@ export class OrderPageComponent extends BasketPageComponent {
       // Zapisz dane do sessionStorage
       const formData = this.orderForm.value;
       sessionStorage.setItem('formData', JSON.stringify(formData));
+      this.router.navigate(['/complete-order']);
     } else {
       // Formularz jest niepoprawny, wyświetl błędy
       this.orderForm.markAllAsTouched(); // Oznacz wszystkie pola jako "dotknięte", aby wyświetlić błędy
