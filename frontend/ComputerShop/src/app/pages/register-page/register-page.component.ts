@@ -1,46 +1,71 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { Router } from '@angular/router';
 import { LoginInputComponent } from '../../components/login-input/login-input.component';
 import { ButtonComponentComponent } from '../../components/button-component/button-component.component';
-import { FormsModule } from '@angular/forms';
-import { LoginPageComponent } from '../login-page/login-page.component';
+import {NgIf} from "@angular/common";
 
-import { Router } from '@angular/router';
-import { error } from 'console';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [LoginInputComponent,ButtonComponentComponent,FormsModule,HttpClientModule],
+  imports: [LoginInputComponent, ButtonComponentComponent, ReactiveFormsModule, NgIf,HttpClientModule],
   templateUrl: './register-page.component.html',
-  styleUrl: './register-page.component.css'
+  styleUrls: ['./register-page.component.css']
 })
-export class RegisterPageComponent {
-  loginPage : any = 'login-page';
-  constructor(private http:HttpClient, private router:Router){}
-  registerPageObj:any = {
-  name:  '',
-  surname:  '',
-  email: '',
-  password: '',
-  repeatPassword: '',
-  acceptRegulamin: false
+export class RegisterPageComponent  {
+  registerForm: FormGroup;
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+    this.registerForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      surname: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.pattern("")]],
+      repeatPassword: ['', Validators.required],
+      acceptRegulamin: [false, Validators.requiredTrue]
+    }, { validators: this.passwordMatchValidator });
+  }
+
+
+
+  passwordMatchValidator(g: FormGroup) {
+    return g.get('password')?.value === g.get('repeatPassword')?.value ? null : { 'mismatch': true };
   }
 
   register() {
-    localStorage.setItem('registered-user',JSON.stringify(this.registerPageObj))
-   this.http.post('http://127.0.0.1:5000/api/register',this.registerPageObj).subscribe((res:any) =>{
-    if(res.result){
-      alert("Udalo sie zarejestrowac")
-     this.router.navigate([this.loginPage]);
+    if (this.registerForm.valid) {
+      this.http.post('http://127.0.0.1:5000/api/register', this.registerForm.value).subscribe({
+        next: (res: any) => {
+          if (res.result) {
+            alert("Udało się zarejestrować.");
+            this.router.navigate(['login-page']);
+          } else {
+            alert(res.message);
+          }
+        },
+        error: (err) => {
+          alert("Error: " + err.message);
+        }
+      });
+    } else {
+      alert("Form is not valid");
+      this.registerForm.markAllAsTouched();
     }
-    else{
-      alert(res.message)
-    }
-   })
   }
-  checkboxGetValue(value:string){
-      if(value==="on"){
-        this.registerPageObj.acceptRegulamin = true;
-      }
+  get name(){
+    return this.registerForm.get('name')
+  }
+  get surname(){
+    return this.registerForm.get('surname')
+  }
+  get email(){
+    return this.registerForm.get('email')
+  }
+  get password(){
+    return this.registerForm.get('password')
+  }
+  get repeatPassword(){
+    return this.registerForm.get('repeatPassword')
   }
 }

@@ -9,6 +9,8 @@
     --background: #07090F;
     --textColor: #ffffff;
     --glassmorph:rgba( 255, 255, 255, 0.2 );
+    --footerAndHeaderBckg: #07090F;
+    --footerAndHeaderText: #ffffff;
 }
 
 /* .light-theme{
@@ -19,9 +21,11 @@
 } */
 .light-theme{
     --borderColor: rgb(0, 130, 250);
-    --background: rgb(255, 255, 255)
+    --background: rgb(255, 255, 255);
     --textColor: rgb(26, 26, 26);
     --glassmorph:rgba( 255, 255, 255, 0.65 );
+    --footerAndHeaderBckg: rgb(0, 130, 250);
+    --footerAndHeaderText: rgb(255,255,255);
 }
 .theme-setter{
     margin: 0;
@@ -32,15 +36,15 @@
     background-color: var(--background);
     color: var(--textColor);
     width: 100%;
-    
+
 }
 /* .router-outlet-wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: hidden; 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 } */
 
 .router-outlet {

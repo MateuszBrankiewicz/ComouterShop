@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
+import { HeaderComponent } from '../../components/header/header.component';
 @Component({
   selector: 'app-aboutme-page',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './aboutme-page.component.html',
   styleUrl: './aboutme-page.component.css'
 })

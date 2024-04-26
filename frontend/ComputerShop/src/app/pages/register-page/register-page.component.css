@@ -38,6 +38,12 @@ h4{
 .button{
     margin: 1% 0;
 }
+.error p {
+  margin-top: -10px;
+  color: red;
+  font-size: 0.8rem;
+}
+
 @media screen and (min-width:900px) {
     .temp{
         flex-direction: row;

@@ -1,43 +1,54 @@
 <div class="temp">
-<div class="register-page">
+<div class="register-page" [formGroup]="registerForm">
     <h1>Rejestracja</h1>
-<app-login-input 
-type="text" 
-placeholder="Imie (wymagane)" 
-[(ngModel)]="registerPageObj.name">
+<app-login-input
+type="text"
+placeholder="Imie (wymagane)"
+ formControlName = "name">
 </app-login-input>
-
-<app-login-input 
-type="text" 
-placeholder="Nazwisko (wymagane)" 
-[(ngModel)]="registerPageObj.surname">
+  <div *ngIf="registerForm.get('name')?.touched &&registerForm.get('name')?.invalid" class="error">
+    <p *ngIf="registerForm.get('name')?.hasError('required')">Imie jest wymagane</p>
+    <p *ngIf="registerForm.get('name')?.hasError('minLength')">Niepoprawna długość.</p></div>
+<app-login-input
+type="text"
+placeholder="Nazwisko (wymagane)"
+formControlName = "surname">
 </app-login-input>
-
-<app-login-input 
-type="email" 
-placeholder="Email (wymagane)" 
-[(ngModel)]="registerPageObj.email">
+  <div *ngIf="registerForm.get('surname')?.touched &&registerForm.get('surname')?.invalid" class="error">
+    <p *ngIf="registerForm.get('surname')?.hasError('required')">Nazwisko jest wymagane.</p>
+    <p *ngIf="registerForm.get('surname')?.hasError('minLength')">Niepoprawna długość.</p></div>
+<app-login-input
+type="email"
+placeholder="Email (wymagane)"
+formControlName = "email">
 </app-login-input>
-
-<app-login-input 
-type="password" 
-placeholder="Hasło (wymagane)" 
-[(ngModel)]="registerPageObj.password">
+  <div *ngIf="registerForm.get('email')?.touched &&registerForm.get('email')?.invalid" class="error">
+    <p *ngIf="registerForm.get('email')?.hasError('required')">Email jest wymagany.</p>
+    <p *ngIf="registerForm.get('email')?.hasError('minLength')">Niepoprawna długość.</p></div>
+<app-login-input
+type="password"
+placeholder="Hasło (wymagane)"
+formControlName = "password">
 </app-login-input>
-
-<app-login-input 
-type="password" 
-placeholder="Powtorz haslo" 
-[(ngModel)]="registerPageObj.repeatPassword">
+  <div *ngIf="registerForm.get('password')?.touched &&registerForm.get('password')?.invalid" class="error">
+    <p *ngIf="registerForm.get('password')?.hasError('required')">Haslo jest wymagane.</p>
+    <p *ngIf="registerForm.get('password')?.hasError('minLength')">Niepoprawna długość.</p></div>
+<app-login-input
+type="password"
+placeholder="Powtorz haslo"
+formControlName = "repeatPassword">
 </app-login-input>
+  <div class="regulamin">
+    <div *ngIf="registerForm.get('repeatPassword')?.touched && registerForm.get('repeatPassword')?.invalid" class="error">
+      <p *ngIf="registerForm.get('repeatPassword')?.hasError('required')">Prosze powtorzyc haslo.</p>
+      <p *ngIf="registerForm.get('repeatPassword')?.hasError('minLength')">Niepoprawna długość.</p></div>
 <h4>Zgody formalne</h4>
-<div class="regulamin">
-<input type="checkbox" #acceptRegulamin (blur)="(checkboxGetValue(acceptRegulamin.value))" name="regulamin" id="regulamin" required> Akceptuje <a href="">regulamin</a> sklepu *
+
+<input type="checkbox" formControlName="acceptRegulamin" name="regulamin" id="regulamin" required> Akceptuje <a href="">regulamin</a> sklepu *
 </div>
 <app-button-component class="button" text="Załóż konto" (buttonClick)="register()"></app-button-component>
 </div>
 <aside>
-
    <h4>Dlaczego warto założyć konto:</h4>
     <ul class="user-information">
       <li><img src="../../../assets/img/loginpage/login1.svg" alt=""> zamawiaj szybcjiej</li>
