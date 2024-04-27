@@ -174,6 +174,7 @@ def login():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
+            print(row)
             if data['email'] == row[3]:
                 if data['password'] == row[4]:
                     return jsonify({'result': 'Logowanie udane', 'name': row[1], 'surname': row[2], 'email': row[3]}), 200

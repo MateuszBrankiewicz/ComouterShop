@@ -7,6 +7,7 @@ import { BasketPageComponent } from './pages/basket-page/basket-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { OrderPageComponent } from './pages/order-page/order-page.component';
 import { AboutmePageComponent } from './pages/aboutme-page/aboutme-page.component';
+import {UsersOrdersComponent} from "./pages/users-orders/users-orders.component";
 
 
 
@@ -29,5 +30,8 @@ export const routes: Routes = [
     },
    {
     path:'aboutme-page', component: AboutmePageComponent
-   }
+   },
+  {
+    path: 'users-orders',component:UsersOrdersComponent
+  }
 ];

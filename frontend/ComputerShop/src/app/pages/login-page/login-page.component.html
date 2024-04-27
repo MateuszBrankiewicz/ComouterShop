@@ -3,35 +3,36 @@
     computer
     </span></a>  <p>Dobry wybór!</p></header>
 <div id="temp">
-<div class="main">
+  <div class="main">
     <h1>Zaloguj</h1>
     <app-login-input
-    id="login" 
-    type="text" 
-    pattern="[a-zA-Z]*" 
-    placeholder="Podaj email" 
-    [(ngModel)] = "loginPageObj.email"
-  ></app-login-input>
-  <app-login-input
-  id="password" 
-  type="password" 
-  pattern="[a-zA-Z]*" 
-  placeholder="Podaj haslo" 
-  [(ngModel)] = "loginPageObj.password"
-></app-login-input>
-<app-button-component (buttonClick)="login()" text="Login"></app-button-component>
-<p>Zapomniałeś hasła? <a href="">Przypomnij hasło</a></p>
+      id="login"
+      type="text"
+      pattern="[a-zA-Z]*"
+      placeholder="Podaj email"
+      [(ngModel)] = "loginPageObj.email"
+    ></app-login-input>
+    <div id="error"></div>
+    <app-login-input
+      id="password"
+      type="password"
+      pattern="[a-zA-Z]*"
+      placeholder="Podaj haslo"
+      [(ngModel)] = "loginPageObj.password"
+    ></app-login-input>
+    <app-button-component (buttonClick)="login()" text="Login"></app-button-component>
+    <p>Zapomniałeś hasła? <a href="">Przypomnij hasło</a></p>
 
-</div>
-<aside>
-  <h1>Nie masz konta?</h1>
-<button class="toRegisterPage" (click)="toRegisterPage()">Zarejestruj się</button> 
- <h4>Dlaczego warto założyć konto:</h4>
-  <ul class="user-information">
-    <li><img src="../../../assets/img/loginpage/login1.svg" alt=""> zamawiaj szybcjiej</li>
-    <li><img src="../../../assets/img/loginpage/login2.svg" alt=""> sprawdzaj poprzednie zamówienia</li>
-    <li> <img src="../../../assets/img/loginpage/login3.svg" alt=""> śledź status zamówienia</li>
-    <li><img src="../../../assets/img/loginpage/login4.svg" alt=""> korzystaj z rabatów i promocji</li>
-  </ul>
-</aside>
+  </div>
+  <aside>
+    <h1>Nie masz konta?</h1>
+    <button class="toRegisterPage" (click)="toRegisterPage()">Zarejestruj się</button>
+    <h4>Dlaczego warto założyć konto:</h4>
+    <ul class="user-information">
+      <li><img src="../../../assets/img/loginpage/login1.svg" alt=""> zamawiaj szybcjiej</li>
+      <li><img src="../../../assets/img/loginpage/login2.svg" alt=""> sprawdzaj poprzednie zamówienia</li>
+      <li> <img src="../../../assets/img/loginpage/login3.svg" alt=""> śledź status zamówienia</li>
+      <li><img src="../../../assets/img/loginpage/login4.svg" alt=""> korzystaj z rabatów i promocji</li>
+    </ul>
+  </aside>
 </div>

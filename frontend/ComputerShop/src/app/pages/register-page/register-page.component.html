@@ -8,7 +8,7 @@ placeholder="Imie (wymagane)"
 </app-login-input>
   <div *ngIf="registerForm.get('name')?.touched &&registerForm.get('name')?.invalid" class="error">
     <p *ngIf="registerForm.get('name')?.hasError('required')">Imie jest wymagane</p>
-    <p *ngIf="registerForm.get('name')?.hasError('minLength')">Niepoprawna długość.</p></div>
+    <p *ngIf="registerForm.get('name')?.hasError('minLength')">Niepoprawna składnia</p></div>
 <app-login-input
 type="text"
 placeholder="Nazwisko (wymagane)"
@@ -16,7 +16,7 @@ formControlName = "surname">
 </app-login-input>
   <div *ngIf="registerForm.get('surname')?.touched &&registerForm.get('surname')?.invalid" class="error">
     <p *ngIf="registerForm.get('surname')?.hasError('required')">Nazwisko jest wymagane.</p>
-    <p *ngIf="registerForm.get('surname')?.hasError('minLength')">Niepoprawna długość.</p></div>
+    <p *ngIf="registerForm.get('surname')?.hasError('minLength')">Niepoprawna składnia</p></div>
 <app-login-input
 type="email"
 placeholder="Email (wymagane)"
@@ -24,7 +24,7 @@ formControlName = "email">
 </app-login-input>
   <div *ngIf="registerForm.get('email')?.touched &&registerForm.get('email')?.invalid" class="error">
     <p *ngIf="registerForm.get('email')?.hasError('required')">Email jest wymagany.</p>
-    <p *ngIf="registerForm.get('email')?.hasError('minLength')">Niepoprawna długość.</p></div>
+    <p *ngIf="registerForm.get('email')?.hasError('pattern')">Niepoprawna składnia</p></div>
 <app-login-input
 type="password"
 placeholder="Hasło (wymagane)"
@@ -32,7 +32,7 @@ formControlName = "password">
 </app-login-input>
   <div *ngIf="registerForm.get('password')?.touched &&registerForm.get('password')?.invalid" class="error">
     <p *ngIf="registerForm.get('password')?.hasError('required')">Haslo jest wymagane.</p>
-    <p *ngIf="registerForm.get('password')?.hasError('minLength')">Niepoprawna długość.</p></div>
+    <p *ngIf="registerForm.get('password')?.hasError('pattern')">Niepoprawna składnia</p></div>
 <app-login-input
 type="password"
 placeholder="Powtorz haslo"
@@ -41,7 +41,7 @@ formControlName = "repeatPassword">
   <div class="regulamin">
     <div *ngIf="registerForm.get('repeatPassword')?.touched && registerForm.get('repeatPassword')?.invalid" class="error">
       <p *ngIf="registerForm.get('repeatPassword')?.hasError('required')">Prosze powtorzyc haslo.</p>
-      <p *ngIf="registerForm.get('repeatPassword')?.hasError('minLength')">Niepoprawna długość.</p></div>
+      <p *ngIf="registerForm.get('repeatPassword')?.hasError('pattern')">Niepoprawna składnia</p></div>
 <h4>Zgody formalne</h4>
 
 <input type="checkbox" formControlName="acceptRegulamin" name="regulamin" id="regulamin" required> Akceptuje <a href="">regulamin</a> sklepu *

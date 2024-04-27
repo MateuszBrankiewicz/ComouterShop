@@ -1,5 +1,8 @@
 <app-header></app-header>
 <h1>Dostawa i płatność</h1>
+<div *ngIf='isErrorOnResponse'>
+  {{ errorMessage }}
+</div>
 <main>
   <form [formGroup]="orderForm"
         (ngSubmit)="submitOrderToSessionStorage()">
@@ -280,11 +283,10 @@
           Zaakceptuj regulamin
         </p>
       </div>
-      <label class="regs-label"
-             for="opinia">
+      <label class="regs-label" for="opinia">
         <input type="checkbox"
                name="regs"
-               id="opnia">
+               id="opinia">
         Chce podzielić się
         opinią o satysfakcji z zakupów
       </label>

@@ -6,7 +6,6 @@
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
-    border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     justify-content: center;
@@ -14,6 +13,18 @@
     align-items: center;
     width: 80%;
     height: 60%;
+}
+#error{
+  font-size: 0.8rem;
+  margin-top: -20px;
+  color: red;
+
+}
+.text-error{
+  font-size: 0.8rem;
+  margin-top: -20px;
+  color: red;
+
 }
 #temp{
     height: 100vh;
@@ -25,7 +36,7 @@
 app-button-component{
     width: 50%;
     max-width: 480px;
-    
+
 }
 app-login-input{
     width: 50%;
@@ -41,7 +52,7 @@ p {
 header{
     border-bottom: 1px solid rgb(221, 221, 221);
     width: 100%;
-    padding: 16px 0 px;
+    padding: 16px 0px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -91,5 +102,5 @@ header{
     .toRegisterPage{
         width: 60%;
     }
-    
+
 }
