@@ -1,13 +1,22 @@
 h1{
     color: var(--textColor);
     text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.remove{
+  width: 10%;
+  text-align: center;
+  font-size: 35px;
+  cursor: pointer;
 }
 .main{
     color: var(--textColor);
     display: flex;
     flex-direction: column;
     height: 100%;
-    
+
 }
 .products{
     width: 95%;
@@ -33,9 +42,9 @@ h1{
 .counter{
     width: 20px;
     height: 20px;
-   
+
     border-radius: 0;
-    
+
 }
 p{
     margin: 0;
@@ -45,7 +54,7 @@ span{
 }
 .product-quantity{
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
 }
@@ -73,7 +82,7 @@ button{
 }
 #cancel:hover{
     color: var(--background);
-    background: var(--borderColor); 
+    background: var(--borderColor);
 }
 button:hover{
     background: var(--background);

@@ -18,6 +18,9 @@ h3{
 .contact-text{
     margin-left: 35px;
 }
+.contact-info{
+  color: var(--borderColor);
+}
 h1{
     margin-left: 2%;
 }
@@ -26,7 +29,8 @@ h1{
 
         flex-direction: row;
         flex-wrap: nowrap;
-        align-items: center;
+        align-items: stretch;
+      justify-content: center;
     }
     .single-point{
         width: 25%;

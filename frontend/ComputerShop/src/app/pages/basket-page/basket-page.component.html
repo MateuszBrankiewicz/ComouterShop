@@ -1,17 +1,17 @@
 <app-header username="{{userName}}" userSession = "{{userSession}}"></app-header>
 <div class="content">
 <h1>Twoje zamowienie</h1>
-<div class="main">    
+<div class="main">
     <div  class="products">
         <div *ngFor = "let product of currentOrder" class="single">
-        <h1>{{product.name}}</h1>
+        <h1>{{product.name}} <span (click)="removeSingleProduct(product)" class="material-symbols-outlined remove">close</span></h1>
         <img src={{product.imgurl}} alt="product">
         <h2>Cena: <br>{{product.price}}</h2>
-        
+
         <div class="product-quantity">
-            <span>Liczba sztuk:</span> 
+            <span>Liczba sztuk:</span>
             <button (click)="deleteSingleProduct(product)" class="counter">-</button>
-             <p>{{product.quantity}}</p> 
+             <p>{{product.quantity}}</p>
              <button (click)="addSingleProduct(product)" class="counter">+</button>
         </div>
     </div>

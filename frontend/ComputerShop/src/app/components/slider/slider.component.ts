@@ -19,7 +19,7 @@ export class SliderComponent {
   hidden = false;
 
 
- 
+
   next() {
     let currentSlide = (this.currentSlide + 1 + this.slides.length) % this.slides.length;
     this.jumpToSlide(currentSlide);
@@ -38,11 +38,11 @@ export class SliderComponent {
     }, 500);
   }
   // constructor(){
-   
+
   //     setInterval(() => {
   //       this.next();
   //     }, 5000);
   //   }
-  
+
 
   }

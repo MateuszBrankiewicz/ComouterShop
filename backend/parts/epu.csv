@@ -1,20 +1,20 @@
 Product Name                      ,Form Factor ,Efficiency Rating ,Wattage ,Modular ,Color          ,Quantity ,Price,imgUrl
-MSI MAG A550BN                    ,ATX         ,80+ Bronze        ,550 W   ,No      ,Black          ,       6 , 49.99,"../../assets/img/epu/msi.jpg"
-Corsair RM1000x (2021)            ,ATX         ,80+ Gold          ,1000 W  ,Full    ,Black          ,     106 ,162.47,../../assets/img/epu/corsair.jpg"
-Asus ROG THOR 1600T Gaming        ,ATX         ,80+ Titanium      ,1600 W  ,Full    ,Silver / Black ,       0 ,631.99,"../../assets/img/epu/msi.jpg"
-Thermaltake Smart                 ,ATX         ,80+               ,600 W   ,No      ,               ,      35 , 44.99,"../../assets/img/epu/thermaltake.jpg" 
-MSI MAG A850GL PCIE5              ,ATX         ,80+ Gold          ,850 W   ,Full    ,Black          ,       9 ,111.99,"../../assets/img/epu/msi.jpg"
-Corsair SF850L                    ,SFX         ,80+ Gold          ,850 W   ,Full    ,Black          ,       6 ,128.99,../../assets/img/epu/corsair.jpg"
-Thermaltake Toughpower GF1 (2024) ,ATX         ,80+ Gold          ,750 W   ,Full    ,Black          ,       1 , 84.99,"../../assets/img/epu/thermaltake.jpg" 
-Corsair HX1500i (2023)            ,ATX         ,80+ Platinum      ,1500 W  ,Full    ,Black          ,       4 ,339.99,../../assets/img/epu/corsair.jpg"
-Corsair RM750x (2021)             ,ATX         ,80+ Gold          ,750 W   ,Full    ,Black          ,      64 ,119.99",../../assets/img/epu/corsair.jpg"
-Apevia Galaxy                     ,ATX         ,80+ Gold          ,650 W   ,Semi    ,Black          ,       2 , 54.99,"../../assets/img/epu/default.jpg"
-MSI MAG A750GL PCIE5              ,ATX         ,80+ Gold          ,750 W   ,Full    ,Black          ,       7 , 93.99,"../../assets/img/epu/msi.jpg"
-Thermaltake Toughpower GX2        ,ATX         ,80+ Gold          ,600 W   ,No      ,Black          ,      23 , 60.99",../../assets/img/epu/thermaltake.jpg" 
-Silverstone HELA                  ,ATX         ,                  ,2050 W  ,Full    ,Black / White  ,       0 ,623.89,"../../assets/img/epu/default.jpg"
-Apevia Prestige                   ,ATX         ,80+ Gold          ,600 W   ,No      ,Black          ,       4 , 51.99,"../../assets/img/epu/apevia.jpg"
-EVGA SuperNOVA 1600 T2            ,ATX         ,80+ Titanium      ,1600 W  ,Full    ,               ,       0 ,739.00,"../../assets/img/epu/default.jpg"
-SeaSonic FOCUS PLUS 850 Gold      ,ATX         ,80+ Gold          ,850 W   ,Full    ,               ,      80 ,124.66,"../../assets/img/epu/default.jpg"
-EVGA SuperNOVA 650 GT             ,ATX         ,80+ Gold          ,650 W   ,Full    ,Black          ,      12 , 84.95,"../../assets/img/epu/default.jpg"
-Thermaltake Toughpower GF A3 Snow ,ATX         ,80+ Gold          ,1050 W  ,Full    ,White          ,       2 , 100.95,"../../assets/img/epu/thermaltake.jpg"  
-Corsair RM750                     ,ATX         ,80+ Gold          ,750 W   ,Full    ,White / Black  ,      31 ,116.86,"../../assets/img/epu/corsair.jpg"
+MSI MAG A550BN                    ,ATX         ,80+ Bronze        ,550 W   ,No      ,Black          ,       6 , 49.99,../../assets/img/epu/msi.jpg
+Corsair RM1000x (2021)            ,ATX         ,80+ Gold          ,1000 W  ,Full    ,Black          ,     106 ,162.47,../../assets/img/epu/corsair.jpg
+Asus ROG THOR 1600T Gaming        ,ATX         ,80+ Titanium      ,1600 W  ,Full    ,Silver / Black ,       0 ,631.99,../../assets/img/epu/msi.jpg
+Thermaltake Smart                 ,ATX         ,80+               ,600 W   ,No      ,               ,      35 , 44.99,../../assets/img/epu/thermaltake.jpg 
+MSI MAG A850GL PCIE5              ,ATX         ,80+ Gold          ,850 W   ,Full    ,Black          ,       9 ,111.99,../../assets/img/epu/msi.jpg
+Corsair SF850L                    ,SFX         ,80+ Gold          ,850 W   ,Full    ,Black          ,       6 ,128.99,../../assets/img/epu/corsair.jpg
+Thermaltake Toughpower GF1 (2024) ,ATX         ,80+ Gold          ,750 W   ,Full    ,Black          ,       1 , 84.99,../../assets/img/epu/thermaltake.jpg 
+Corsair HX1500i (2023)            ,ATX         ,80+ Platinum      ,1500 W  ,Full    ,Black          ,       4 ,339.99,../../assets/img/epu/corsair.jpg
+Corsair RM750x (2021)             ,ATX         ,80+ Gold          ,750 W   ,Full    ,Black          ,      64 ,119.99,../../assets/img/epu/corsair.jpg
+Apevia Galaxy                     ,ATX         ,80+ Gold          ,650 W   ,Semi    ,Black          ,       2 , 54.99,../../assets/img/epu/default.jpg
+MSI MAG A750GL PCIE5              ,ATX         ,80+ Gold          ,750 W   ,Full    ,Black          ,       7 , 93.99,../../assets/img/epu/msi.jpg
+Thermaltake Toughpower GX2        ,ATX         ,80+ Gold          ,600 W   ,No      ,Black          ,      23 , 60.99,../../assets/img/epu/thermaltake.jpg 
+Silverstone HELA                  ,ATX         ,                  ,2050 W  ,Full    ,Black / White  ,       0 ,623.89,../../assets/img/epu/default.jpg
+Apevia Prestige                   ,ATX         ,80+ Gold          ,600 W   ,No      ,Black          ,       4 , 51.99,../../assets/img/epu/apevia.jpg
+EVGA SuperNOVA 1600 T2            ,ATX         ,80+ Titanium      ,1600 W  ,Full    ,               ,       0 ,739.00,../../assets/img/epu/default.jpg
+SeaSonic FOCUS PLUS 850 Gold      ,ATX         ,80+ Gold          ,850 W   ,Full    ,               ,      80 ,124.66,../../assets/img/epu/default.jpg
+EVGA SuperNOVA 650 GT             ,ATX         ,80+ Gold          ,650 W   ,Full    ,Black          ,      12 , 84.95,../../assets/img/epu/default.jpg
+Thermaltake Toughpower GF A3 Snow ,ATX         ,80+ Gold          ,1050 W  ,Full    ,White          ,       2 , 100.95,../../assets/img/epu/thermaltake.jpg  
+Corsair RM750                     ,ATX         ,80+ Gold          ,750 W   ,Full    ,White / Black  ,      31 ,116.86,../../assets/img/epu/corsair.jpg
